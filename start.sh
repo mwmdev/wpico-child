@@ -14,7 +14,7 @@ trap cleanup EXIT INT TERM
 wp server --port=8000 --config=/home/mike/cloud/dev/cfg/php.ini &
 
 # Wait a bit for the server to start
-sleep 2
+sleep 3
 
 # Start Gulp tasks
 echo "Starting Gulp tasks..."

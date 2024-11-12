@@ -26,13 +26,13 @@ validate_color() {
 }
 
 # Get theme information
-read -p "Theme Name: " THEME_NAME
+read -p "Theme Name (e.g., 'My Theme'): " THEME_NAME
 validate_input "$THEME_NAME" "Theme Name"
 
-read -p "Theme Author: " THEME_AUTHOR
+read -p "Theme Author (e.g., 'John Doe'): " THEME_AUTHOR
 validate_input "$THEME_AUTHOR" "Theme Author"
 
-read -p "Author URI (optional): " AUTHOR_URI
+read -p "Author URI : " AUTHOR_URI
 validate_input "$AUTHOR_URI" "Author URI"
 
 read -p "Theme Description: " THEME_DESCRIPTION
@@ -58,10 +58,10 @@ validate_input "$SECONDARY_COLOR" "Secondary Color"
 validate_color "$SECONDARY_COLOR" "Secondary Color"
 
 # Get width information
-read -p "Outer Width (in pixels, e.g., '1600'): " OUTER_WIDTH
+read -p "Outer Width (e.g., '1600px'): " OUTER_WIDTH
 validate_input "$OUTER_WIDTH" "Outer Width"
 
-read -p "Inner Width (in pixels, e.g., '1455'): " INNER_WIDTH
+read -p "Inner Width (e.g., '1200px'): " INNER_WIDTH
 validate_input "$INNER_WIDTH" "Inner Width"
 
 # Get pages to create (comma-separated)
@@ -75,17 +75,17 @@ THEME_SLUG=$(slugify "$THEME_NAME")
 # Confirm the values
 echo -e "\nPlease confirm these values:"
 echo "Theme Name: $THEME_NAME"
-echo "Theme Slug: $THEME_SLUG"
-echo "Theme Description: $THEME_DESCRIPTION"
-echo "Theme URI: $THEME_URI"
 echo "Theme Author: $THEME_AUTHOR"
 echo "Author URI: $AUTHOR_URI"
+echo "Theme Description: $THEME_DESCRIPTION"
+echo "Theme URI: $THEME_URI"
+echo "Theme Slug: $THEME_SLUG"
 echo "Primary Font: $PRIMARY_FONT"
 echo "Secondary Font: $SECONDARY_FONT"
 echo "Primary Color: $PRIMARY_COLOR"
 echo "Secondary Color: $SECONDARY_COLOR"
-echo "Outer Width: ${OUTER_WIDTH}px"
-echo "Inner Width: ${INNER_WIDTH}px"
+echo "Outer Width: ${OUTER_WIDTH}"
+echo "Inner Width: ${INNER_WIDTH}"
 echo "Pages to create:"
 printf '%s\n' "${PAGES[@]}" | sed 's/^[[:space:]]*//'
 
@@ -97,19 +97,53 @@ then
     exit 1
 fi
 
-# Replace placeholders in all files except setup.sh and reset.sh
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/THEME_NAME/${THEME_NAME}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/THEME_SLUG/${THEME_SLUG}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/THEME_DESCRIPTION/${THEME_DESCRIPTION}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/THEME_AUTHOR/${THEME_AUTHOR}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/AUTHOR_URI/${AUTHOR_URI}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/THEME_URI/${THEME_URI}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/PRIMARY_FONT/${PRIMARY_FONT}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/SECONDARY_FONT/${SECONDARY_FONT}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/PRIMARY_COLOR/${PRIMARY_COLOR}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/SECONDARY_COLOR/${SECONDARY_COLOR}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/OUTER_WIDTH/${OUTER_WIDTH}/g" {} +
-find . -type f -not -path "./.git/*" -not -name "setup.sh" -not -name "reset.sh" -exec sed -i "s/INNER_WIDTH/${INNER_WIDTH}/g" {} +
+# Update style.css
+if [ -f "style.css" ]; then
+    echo "Processing style.css..."
+    sed -i "s/Theme Name: .*/Theme Name: ${THEME_NAME}/g" style.css
+    sed -i "s|Theme URI: .*|Theme URI: ${THEME_URI}|g" style.css
+    sed -i "s/Description: .*/Description: ${THEME_DESCRIPTION}/g" style.css
+    sed -i "s/Author: .*/Author: ${THEME_AUTHOR}/g" style.css
+    sed -i "s|Author URI: .*|Author URI: ${AUTHOR_URI}|g" style.css
+    sed -i "s/Text Domain: .*/Text Domain: ${THEME_SLUG}/g" style.css
+fi
+
+# Update package.json
+if [ -f "package.json" ]; then
+    echo "Processing package.json..."
+    sed -i "s|\"name\": \".*\"|\"name\": \"${THEME_SLUG}\"|g" package.json
+    sed -i "s|\"description\": \".*\"|\"description\": \"${THEME_DESCRIPTION}\"|g" package.json
+fi
+
+# Update functions.php
+if [ -f "functions.php" ]; then
+    echo "Processing functions.php..."
+    sed -i "s/THEME_SLUG/${THEME_SLUG}/g" functions.php
+    sed -i "s/THEME_NAME/${THEME_NAME}/g" functions.php
+    sed -i "s/PRIMARY_FONT/${PRIMARY_FONT}/g" functions.php
+    sed -i "s/SECONDARY_FONT/${SECONDARY_FONT}/g" functions.php
+fi
+
+# Update typography.scss
+if [ -f "assets/sass/abstracts/_typography.scss" ]; then
+    echo "Processing _typography.scss..."
+    sed -i "s/PRIMARY_FONT/${PRIMARY_FONT}/g" assets/sass/abstracts/_typography.scss
+    sed -i "s/SECONDARY_FONT/${SECONDARY_FONT}/g" assets/sass/abstracts/_typography.scss
+fi
+
+# Update colors.scss
+if [ -f "assets/sass/abstracts/_colors.scss" ]; then
+    echo "Processing _colors.scss..."
+    sed -i "s/PRIMARY_COLOR/${PRIMARY_COLOR}/g" assets/sass/abstracts/_colors.scss
+    sed -i "s/SECONDARY_COLOR/${SECONDARY_COLOR}/g" assets/sass/abstracts/_colors.scss
+fi
+
+# Update sizes.scss
+if [ -f "assets/sass/abstracts/_sizes.scss" ]; then
+    echo "Processing _sizes.scss..."
+    sed -i "s/OUTER_WIDTH/${OUTER_WIDTH}/g" assets/sass/abstracts/_sizes.scss
+    sed -i "s/INNER_WIDTH/${INNER_WIDTH}/g" assets/sass/abstracts/_sizes.scss
+fi
 
 # Create WordPress pages
 if [ ${#PAGES[@]} -gt 0 ]; then
@@ -129,7 +163,12 @@ if [ ${#PAGES[@]} -gt 0 ]; then
 fi
 
 # Make scripts executable
+echo "Making scripts executable..."
 chmod +x start.sh reset.sh
+
+# Run npm install
+echo "Running npm install..."
+npm install
 
 echo -e "\nSetup completed successfully!"
 echo "You can now start development with: ./start.sh"
