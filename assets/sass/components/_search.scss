@@ -1,0 +1,126 @@
+/* Search: the search menu and overlay */
+#search {
+
+  > label {
+    bottom: var(--space-2xs);
+    display: block !important;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: var(--space-2xl);
+
+    /* Icon */
+    &::after {
+      background: transparent url($search) center center no-repeat;
+      content: "";
+      display: block;
+      height: calc(var(--space-m) * 1.3);
+      width: calc(var(--space-m) * 1.3);
+    }
+
+  }
+
+  #search-toggle {
+    display: none;
+    &:checked + .overlay {
+      display: flex;
+    }
+  }
+
+  .overlay  {
+    align-items: center;
+    background-color: rgba($orange, .95);
+    display: none;
+    justify-content: center;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+
+    label {
+      @extend .close-btn;
+    }
+
+    form {
+      box-shadow: none !important;
+      padding: 0 var(--space-l);
+      margin: 0;
+      max-width: 60%;
+
+      input[type="search"] {
+        background-color: $light-grey;
+        border: 0;
+        border-radius: 0;
+        color: $black;
+        font-family: $main-font;
+        font-size: var(--step-0);
+        font-weight: 500;
+        height: var(--space-xl);
+        padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-xl);
+        width: 100%;
+      }
+
+      button{
+        background-color: $white;
+        border: 0;
+        border-radius: 0;
+        color: $black;
+        cursor: pointer;
+        font-family: $main-font;
+        font-size: var(--step-0);
+        font-weight: 500;
+        height: var(--space-xl);
+        padding: var(--space-xs) var(--space-s);
+        text-transform: uppercase;
+      }
+    }
+
+  }
+
+}
+
+/* Search results */
+.search {
+  
+  main {
+    
+    > header {
+      background: $white;
+      max-width: $outer-width;
+      margin: 0 auto var(--space-s) auto;
+      padding: var(--space-xl) var(--space-l);
+      
+      h1 {
+        color: $dark-purple;
+      }
+    }
+    
+    article {
+      background: $white;
+      
+      header {
+        width: 100%;
+        
+        span {
+          text-transform: uppercase;
+        }
+        
+        h2 {
+          margin-left: 0;
+          
+          &::before{
+            display: none;
+          }
+          
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+}

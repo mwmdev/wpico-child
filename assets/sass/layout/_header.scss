@@ -1,0 +1,14 @@
+.site-header {
+    padding: $spacing-md 0;
+    background: $white;
+    border-bottom: 1px solid $gray-100;
+    
+    .container {
+        max-width: $container-max-width;
+        margin: 0 auto;
+        padding: 0 $container-padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+} 

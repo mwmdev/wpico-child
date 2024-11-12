@@ -1,0 +1,15 @@
+/* Default */
+
+$main-font: "PRIMARY_FONT", sans-serif;
+$secondary-font: "SECONDARY_FONT", sans-serif;
+
+body {
+  font-family: $main-font;
+  font-size: var(--step-0);
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0,
+    "SHRP" 0;
+  line-height: var(--space-l);
+}

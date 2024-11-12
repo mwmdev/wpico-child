@@ -1,0 +1,44 @@
+/* Buttons */
+a[role="button"] {
+  align-items: center;
+  background-color: $white;
+  border-radius: 0;
+  border-width: 1px;
+  border-color: $black;
+  color: $black;
+  display: inline-flex;
+  font-family: $secondary-font;
+  font-size: var(--step-0);
+  font-weight: 500;
+  height: var(--space-xl);
+  line-height: var(--space-l);
+  padding: var(--space-xs) calc(var(--space-m)*1.6) var(--space-xs) var(--space-s) !important;
+  position: relative;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+}
+
+/* Close button */
+.close-btn {
+  color: $white !important;
+  display: block !important;
+  position: absolute;
+  right: var(--space-s);
+  top: var(--space-xs);
+  cursor: pointer;
+
+  /* Close icon */
+  &::after {
+    background: transparent url($close) center center no-repeat;
+    content: "";
+    display: block;
+    height: calc(var(--space-m) * 1.5);
+    width: calc(var(--space-m) * 1.5);
+  }
+
+}
