@@ -1,0 +1,25 @@
+@use "../abstracts" as *;
+
+article {
+    background: paint(white);
+
+    header {
+        background: paint(medium);
+        border: 0;
+
+        h1 {
+            font-size: font-size(m);
+            color: paint(darkest);
+            text-shadow: 0 0 3px paint(lightest);
+        }
+    }
+
+    p {
+        color: paint(black);
+    }
+
+    footer {
+        background: paint(medium);
+        border: 0;
+    }
+}

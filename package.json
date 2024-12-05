@@ -1,7 +1,7 @@
 {
-  "name": "THEME_SLUG",
+  "name": "vfs",
   "version": "1.0.0",
-  "description": "THEME_DESCRIPTION",
+  "description": "Thème Wordpress pour Vallée Fleuve Sénégal",
   "scripts": {
     "start": "gulp",
     "build": "gulp build"

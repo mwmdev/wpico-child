@@ -1,7 +1,7 @@
 /* Default */
 
-$primary-font: "PRIMARY_FONT", sans-serif;
-$secondary-font: "PRIMARY_FONT", sans-serif;
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Raleway", sans-serif;
 
 body {
   font-family: $primary-font;
@@ -13,3 +13,13 @@ body {
     "SHRP" 0;
   line-height: var(--space-l);
 }
+
+h1 {
+  font-family: $primary-font;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: $secondary-font;
+}
+
+// fluid font sizes 2xs, xs, s, m, l, xl, 2xl

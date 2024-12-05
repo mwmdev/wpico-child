@@ -1,14 +1,28 @@
-.site-header {
-    padding: $spacing-md 0;
-    background: $white;
-    border-bottom: 1px solid $gray-100;
-    
-    .container {
-        max-width: $container-max-width;
-        margin: 0 auto;
-        padding: 0 $container-padding;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+@use "../abstracts" as *;
+
+body > header {
+    position: relative;
+
+    a {
+        color: paint(darkest);
+        display: inline-block;
+        text-decoration: none;
+
+        h1 {
+            color: paint(darkest);
+            font-size: font-size(l);
+            line-height: space(xl);
+        }
+
     }
+
+    small {
+        color: paint(darker);
+        display: block;
+        font-size: font-size(s);
+        line-height: space(m);
+        max-width: 650px;
+    }
+
+
 } 

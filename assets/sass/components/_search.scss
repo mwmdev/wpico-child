@@ -1,21 +1,26 @@
 /* Search: the search menu and overlay */
+@use "abstracts/sizes";
+@use "abstracts/colors";
+@use "abstracts/icons";
+@use "abstracts/typography";
+
 #search {
 
   > label {
-    bottom: var(--space-2xs);
+    bottom: space(2xs);
     display: block !important;
     cursor: pointer;
     padding: 0;
     position: absolute;
-    right: var(--space-2xl);
+    right: space(2xl);
 
     /* Icon */
     &::after {
-      background: transparent url($search) center center no-repeat;
+      background: transparent url(icons.$search) center center no-repeat;
       content: "";
       display: block;
-      height: calc(var(--space-m) * 1.3);
-      width: calc(var(--space-m) * 1.3);
+      height: calc(space(m) * 1.3);
+      width: calc(space(m) * 1.3);
     }
 
   }
@@ -29,7 +34,7 @@
 
   .overlay  {
     align-items: center;
-    background-color: rgba($orange, .95);
+    background-color: paint(white);
     display: none;
     justify-content: center;
     max-width: 100%;
@@ -41,39 +46,39 @@
     z-index: 50;
 
     label {
-      @extend .close-btn;
+      @extend .close-btn !optional
     }
 
     form {
       box-shadow: none !important;
-      padding: 0 var(--space-l);
+      padding: 0 space(l);
       margin: 0;
       max-width: 60%;
 
       input[type="search"] {
-        background-color: $light-grey;
+        background-color: paint(white);
         border: 0;
         border-radius: 0;
-        color: $black;
-        font-family: $main-font;
-        font-size: var(--step-0);
+        color: paint(black);
+        font-family: typography.$primary-font;
+        font-size: font-size(m);
         font-weight: 500;
-        height: var(--space-xl);
-        padding: var(--space-xs) var(--space-s) var(--space-xs) var(--space-xl);
+        height: space(xl);
+        padding: space(xs) space(s) space(xs) space(xl);
         width: 100%;
       }
 
       button{
-        background-color: $white;
+        background-color: paint(white);
         border: 0;
         border-radius: 0;
-        color: $black;
+        color: paint(black);
         cursor: pointer;
-        font-family: $main-font;
-        font-size: var(--step-0);
+        font-family: typography.$primary-font;
+        font-size: font-size(m);
         font-weight: 500;
-        height: var(--space-xl);
-        padding: var(--space-xs) var(--space-s);
+        height: space(xl);
+        padding: space(xs) space(s);
         text-transform: uppercase;
       }
     }
@@ -88,18 +93,18 @@
   main {
     
     > header {
-      background: $white;
-      max-width: $outer-width;
-      margin: 0 auto var(--space-s) auto;
-      padding: var(--space-xl) var(--space-l);
+      background: paint(white);
+      max-width: sizes.$outer-width;
+      margin: 0 auto space(s) auto;
+      padding: space(xl) space(l);
       
       h1 {
-        color: $dark-purple;
+        color: paint(darkest);
       }
     }
     
     article {
-      background: $white;
+      background: paint(white);
       
       header {
         width: 100%;
