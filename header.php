@@ -7,7 +7,18 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header>
+    <?php
+
+    $photo = get_field('photo');
+    if ($photo) {
+        error_log('photo : ' . print_r($photo, true));
+        
+        $photo_url = $photo['sizes']['large'];
+    } else {
+        $photo_url = '';
+    }
+    ?>
+<header style="background-image: url('<?php echo $photo_url; ?>')">
     <div class="container">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
             <h1><?php bloginfo( 'name' ); ?></h1>

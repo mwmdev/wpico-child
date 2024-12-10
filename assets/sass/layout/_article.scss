@@ -1,17 +1,13 @@
 @use "../abstracts" as *;
 
 article {
-    background: paint(white);
+    background: paint(lightest);
+    box-shadow: none;
+    border-radius: 0;
 
     header {
-        background: paint(medium);
+        background: paint(lightest);
         border: 0;
-
-        h1 {
-            font-size: font-size(m);
-            color: paint(darkest);
-            text-shadow: 0 0 3px paint(lightest);
-        }
     }
 
     p {
@@ -19,7 +15,7 @@ article {
     }
 
     footer {
-        background: paint(medium);
+        background: paint(lightest);
         border: 0;
     }
 }

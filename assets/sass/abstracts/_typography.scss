@@ -1,3 +1,5 @@
+@use "abstracts/colors" as *;
+
 /* Default */
 
 $primary-font: "Montserrat", sans-serif;
@@ -15,11 +17,56 @@ body {
 }
 
 h1 {
+  color: paint(darkest);
   font-family: $primary-font;
+  font-size: font-size(l);
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background: paint(white);
+    border-radius: 50%;
+    bottom: -15px;
+    content: '';
+    display: block;
+    height: 50px;
+    left: -20px;
+    position: absolute;
+    width: 50px;
+    z-index: -1;
+  }
+
 }
 
 h2, h3, h4, h5, h6 {
+  color: paint(darkest);
   font-family: $secondary-font;
+  text-shadow: 0 0 3px paint(lightest);
 }
 
-// fluid font sizes 2xs, xs, s, m, l, xl, 2xl
+h2 {
+  font-size: font-size(m);
+}
+
+h3 {
+  font-size: font-size(s);
+}
+
+h4 {
+  font-size: font-size(xs);
+}
+
+h5 {
+  font-size: font-size(2xs);
+}
+
+h6 {
+  font-size: font-size(2xs);
+}
+
+
+ul, ol {
+  li {
+    color: paint(black);
+  }
+}

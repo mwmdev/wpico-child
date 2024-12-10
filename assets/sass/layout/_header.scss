@@ -1,27 +1,72 @@
 @use "../abstracts" as *;
 
 body > header {
+    background-color: paint(lighter);
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 350px;
     position: relative;
+    padding: 0;
 
     a {
         color: paint(darkest);
-        display: inline-block;
+        display: block;
         text-decoration: none;
-
+        width: 100%;
         h1 {
+            background: paint(lighter);
+            border-radius: 25px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
             color: paint(darkest);
             font-size: font-size(l);
-            line-height: space(xl);
+            line-height: space(l);
+            padding: space(xs) space(s) space(xs) space(xxl);
+            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
+            width: 100%;
+
+            &::before {
+                bottom: 12px;
+                left: 15px;
+            }
+            &::after {
+                background: paint(lightest);
+                border-radius: 50%;
+                bottom: 22px;
+                content: '';
+                display: block;
+                height: 30px;
+                left: 25px;
+                position: absolute;
+                width: 30px;
+                z-index: 2;
+            }
         }
 
     }
 
     small {
-        color: paint(darker);
+        color: paint(white);
         display: block;
-        font-size: font-size(s);
+        font-family: $secondary-font;
+        font-size: font-size(m);
+        font-weight: 800;
         line-height: space(m);
-        max-width: 650px;
+        margin-bottom: space(xxl);
+        max-width: 800px;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: paint(darker);
+        opacity: 0.2;
     }
 
 

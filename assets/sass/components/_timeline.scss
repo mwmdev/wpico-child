@@ -1,0 +1,73 @@
+@use "../abstracts" as *;
+
+/* Timeline */
+
+.timeline-container {
+    position: relative;
+    margin: space(xl) auto;
+    padding: space(l) 0;
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 4px;
+      background: #ccc;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -2px;
+    }
+  
+  article {
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    background: paint(white);
+    margin-bottom: space(m);
+    padding: space(s) space(m);
+    position: relative;
+    width: 45%;
+  
+    h3 {
+      margin-top: 0;
+      font-size: font-size(s);
+
+      strong {
+        display: inline-block;
+        font-size: font-size(m);
+        font-weight: 800;
+        margin-right: space(2xs);
+      }
+
+    }
+
+    p {
+        color: paint(darkest);
+    }
+  
+    &.left {
+      left: 0;
+    }
+  
+    &.right {
+      left: 55%;
+    }
+  
+    &::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: -12.5%;
+      background: #ccc;
+      border-radius: 50%;
+      top: 20px;
+      border: 4px solid #f9f9f9;
+    }
+  
+    &.right::after {
+      left: -12.5%;
+    }
+  }
+
+}
+  

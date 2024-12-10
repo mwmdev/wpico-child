@@ -1,4 +1,5 @@
 @use "../abstracts" as *;
+@use "sass:color";
 
 /* Mobile menu */
 body > header {
@@ -78,15 +79,14 @@ body > header {
     /* Breakpoint L: Desktop menu */
     @media (min-width: breakpoint(l)) {
       background: transparent;
+      bottom: 0;
       display: block;
       float: none;
-      // left: 50%;
       margin: 0;
       padding: 0;
-      position: relative;
-      // top: space(xl);
-      // transform: translateX(-50%);
-      // width: auto;
+      top: initial;
+      left: initial;
+      
       
      label {
        display: none !important;
@@ -96,22 +96,44 @@ body > header {
         display: inline-block;
         margin: 0;
         padding: 0;
-        // white-space: nowrap;
         
          li {
-           display: inline-block;
+           display: inline-flex;
            margin: 0 space(2xs) 0 0;
+           height: 60px;
            
            a {
-             border-radius: 0;
+             align-items: center;
+             background: color.adjust(paint(lightest), $lightness: -5%);
+             border-top-left-radius: 10px;
+             border-top-right-radius: 10px;
+             border-bottom-left-radius: 0;
+             border-bottom-right-radius: 0;
+             border-bottom: 1px solid paint(lighter);
+             box-sizing: border-box;
              color: paint(darkest);
-             display: block;
-             font-size: font-size(xs);
-             font-weight: 500;
-             padding: space(xs) space(2xs);
+             display: flex;
+             font-size: font-size(s);
+             font-weight: 600;
+             height: 100%;
+             line-height: space(s);
+             padding: space(xs) space(xs);
              margin: 0;
-             max-width: 200px;
-           }
+             max-width: 250px;
+             text-align: center;
+             text-transform: none;
+             text-shadow: 1px 1px 3px paint(white);
+
+             &[aria-current="page"] {
+              background: paint(lightest);
+              border-bottom: 1px solid paint(lightest);
+             }
+
+             &:hover {
+              background: paint(lightest);
+            }
+
+          }
            
          }
         
