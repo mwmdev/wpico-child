@@ -1,6 +1,6 @@
 # WordPress Child Theme Generator
 
-A powerful WordPress child theme generator based on wpico theme, featuring SASS processing, JavaScript bundling, live reload capabilities, and automated setup.
+A powerful WordPress child theme generator based on the [wpico theme](https://github.com/mwmdev/wpico), featuring SASS processing, JavaScript bundling, live reload capabilities, and automated setup.
 
 ## Features
 
