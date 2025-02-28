@@ -25,7 +25,7 @@ A powerful WordPress child theme generator based on the [wpico theme](https://gi
 1. Clone this repository into your WordPress themes directory:
    ```bash
    cd wp-content/themes/
-   git clone [repository-url]
+   git clone https://github.com/mwmdev/wpico-child.git
    ```
 
 2. Run the setup script:
