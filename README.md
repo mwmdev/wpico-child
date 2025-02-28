@@ -17,7 +17,7 @@ A powerful WordPress child theme generator based on wpico theme, featuring SASS 
 ## Prerequisites
 
 - Node.js and npm
-- WordPress installation with wpico theme
+- WordPress installation with [wpico theme](https://github.com/mwmdev/wpico)
 - Nix package manager (optional but recommended)
 
 ## Quick Start
