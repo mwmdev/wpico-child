@@ -5,6 +5,9 @@
 # Automaker
 .automaker/
 
+# Test results
+test-results/
+
 # Build files
 /assets/css/*.css
 /assets/css/*.map
