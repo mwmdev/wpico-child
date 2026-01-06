@@ -1,0 +1,49 @@
+@use "sass:map";
+
+/* Outer and inner widths */
+$outer-width: OUTER_WIDTH !default;
+$inner-width: INNER_WIDTH !default;
+
+/* Breakpoints */
+$breakpoints: (
+  s: 576px,
+  m: 768px,
+  l: 1024px,
+  xl: 1280px,
+  xxl: 1536px
+) !default;
+
+@function breakpoint($key) {
+  @return map.get($breakpoints, $key);
+}
+
+/* Font sizes */
+$font-sizes: (
+  2xs: 0.5rem,
+  xs: 0.75rem,
+  s: 1rem,
+  m: 1.25rem,
+  l: 1.5rem,
+  xl: 2rem,
+  xxl: 2.5rem
+) !default;
+
+@function font-size($key) {
+  @return map.get($font-sizes, $key);
+}
+
+/* Spaces */
+$spaces: (
+  3xs: 0.25rem,
+  2xs: 0.5rem,
+  xs: 0.75rem,
+  s: 1rem,
+  m: 1.5rem,
+  l: 2rem,
+  xl: 3rem,
+  xxl: 4rem
+) !default;
+
+@function space($key) {
+  @return map.get($spaces, $key);
+}

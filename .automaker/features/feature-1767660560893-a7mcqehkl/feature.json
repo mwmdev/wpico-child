@@ -1,0 +1,21 @@
+{
+  "category": "Uncategorized",
+  "description": "this is a starter child theme, it should have no defined name, i see something about \"Sénégal\" or \"Senegal\" in some files, that should be removed. The slug for this theme is \"wpico-child\" and the name \"wpico Child\"",
+  "title": "Remove Senegal references from starter child theme",
+  "images": [],
+  "imagePaths": [],
+  "textFilePaths": [],
+  "skipTests": false,
+  "model": "opus",
+  "thinkingLevel": "none",
+  "branchName": "main",
+  "priority": 2,
+  "planningMode": "skip",
+  "requirePlanApproval": false,
+  "dependencies": [],
+  "titleGenerating": false,
+  "status": "verified",
+  "id": "feature-1767660560893-a7mcqehkl",
+  "startedAt": "2026-01-06T00:53:30.861Z",
+  "updatedAt": "2026-01-06T00:54:35.075Z"
+}

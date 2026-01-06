@@ -1,0 +1,146 @@
+@use "../abstracts" as *;
+@use "sass:color";
+
+/* Mobile menu */
+body > header {
+
+  /* Toggle: shows and hides the menu */
+  #nav-toggle {
+    display: none;
+  }
+  #nav-toggle:checked~nav{
+    display: block;
+  }
+
+  label {
+    display: block;
+    position: absolute;
+    right: space(m);
+    top: space(m);
+
+    /* Hamburger button */
+    .nav-toggle-btn {
+      display: block;
+      background: url($burger) center center no-repeat;
+      height: 28px;
+      width: 28px;
+    }
+
+    /* Breakpoint L */
+    @media (min-width: breakpoint(l)) {
+      display: none !important;
+    }
+
+  }
+
+  /* Menu */
+  nav {
+    background: paint(white);
+    display: none;
+    margin: 0;
+    padding: space(l) space(xxl) space(l) space(xl);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    label {
+      @extend .close-btn !optional;
+    }
+
+    ul {
+      display: block;
+
+      li {
+        display: block;
+        margin-bottom: space(m);
+        padding: 0;
+        position: relative;
+
+        a{
+          background-position: left center;
+          color: paint(darker);
+          display: block;
+          font-family: $secondary-font;
+          font-size: font-size(s);
+          padding-left: space(xl);
+          text-transform: uppercase;
+
+          &:hover {
+            color: paint(darkest);
+          }
+
+        }
+
+      }
+
+    }
+    
+    /* Breakpoint L: Desktop menu */
+    @media (min-width: breakpoint(l)) {
+      background: transparent;
+      bottom: 0;
+      display: block;
+      float: none;
+      margin: 0;
+      padding: 0;
+      top: initial;
+      left: initial;
+      
+      
+     label {
+       display: none !important;
+     } 
+      
+      ul {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        
+         li {
+           display: inline-flex;
+           margin: 0 space(2xs) 0 0;
+           height: 60px;
+           
+           a {
+             align-items: center;
+             background: color.adjust(paint(lightest), $lightness: -5%);
+             border-top-left-radius: 10px;
+             border-top-right-radius: 10px;
+             border-bottom-left-radius: 0;
+             border-bottom-right-radius: 0;
+             border-bottom: 1px solid paint(lighter);
+             box-sizing: border-box;
+             color: paint(darkest);
+             display: flex;
+             font-size: font-size(s);
+             font-weight: 600;
+             height: 100%;
+             line-height: space(s);
+             padding: space(xs) space(xs);
+             margin: 0;
+             max-width: 250px;
+             text-align: center;
+             text-transform: none;
+             text-shadow: 1px 1px 3px paint(white);
+
+             &[aria-current="page"] {
+              background: paint(lightest);
+              border-bottom: 1px solid paint(lightest);
+             }
+
+             &:hover {
+              background: paint(lightest);
+            }
+
+          }
+           
+         }
+        
+      }
+      
+    }
+
+  }
+  
+}

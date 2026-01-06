@@ -1,0 +1,72 @@
+@use "abstracts/colors" as *;
+
+/* Default */
+
+$primary-font: "Montserrat", sans-serif;
+$secondary-font: "Raleway", sans-serif;
+
+body {
+  font-family: $primary-font;
+  font-size: var(--step-0);
+  font-optical-sizing: auto;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0,
+    "SHRP" 0;
+  line-height: var(--space-l);
+}
+
+h1 {
+  color: paint(darkest);
+  font-family: $primary-font;
+  font-size: font-size(l);
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    background: paint(white);
+    border-radius: 50%;
+    bottom: -15px;
+    content: '';
+    display: block;
+    height: 50px;
+    left: -20px;
+    position: absolute;
+    width: 50px;
+    z-index: -1;
+  }
+
+}
+
+h2, h3, h4, h5, h6 {
+  color: paint(darkest);
+  font-family: $secondary-font;
+  text-shadow: 0 0 3px paint(lightest);
+}
+
+h2 {
+  font-size: font-size(m);
+}
+
+h3 {
+  font-size: font-size(s);
+}
+
+h4 {
+  font-size: font-size(xs);
+}
+
+h5 {
+  font-size: font-size(2xs);
+}
+
+h6 {
+  font-size: font-size(2xs);
+}
+
+
+ul, ol {
+  li {
+    color: paint(black);
+  }
+}

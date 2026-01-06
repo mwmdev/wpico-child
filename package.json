@@ -1,0 +1,25 @@
+{
+  "name": "wpico-child",
+  "version": "1.0.0",
+  "description": "WordPress starter child theme for wpico with i18n support",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "pot": "gulp pot",
+    "compile-mo": "node scripts/compile-mo.js",
+    "i18n": "npm run pot && npm run compile-mo languages/fr_FR.po languages/fr_FR.mo"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-wp-pot": "^2.5.0",
+    "sass": "^1.63.6"
+  }
+}

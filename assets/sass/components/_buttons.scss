@@ -1,0 +1,49 @@
+/* Buttons */
+@use "abstracts/colors";
+@use "abstracts/icons";
+@use "abstracts/sizes";
+@use "abstracts/typography";
+
+a[role="button"] {
+  align-items: center;
+  background-color: paint(white);
+  border-radius: 0;
+  border-width: 1px;
+  border-color: paint(black);
+  color: paint(black);
+  display: inline-flex;
+  font-family: typography.$secondary-font;
+  font-size: font-size(m);
+  font-weight: 500;
+  height: space(xl);
+  line-height: space(l);
+  padding: space(xs) calc(space(m)*1.6) space(xs) space(s) !important;
+  position: relative;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: paint(black);
+    color: paint(white);
+  }
+
+}
+
+/* Close button */
+.close-btn {
+  color: paint(white) !important;
+  display: block !important;
+  position: absolute;
+  right: space(s);
+  top: space(xs);
+  cursor: pointer;
+
+  /* Close icon */
+  &::after {
+    background: transparent url(icons.$close) center center no-repeat;
+    content: "";
+    display: block;
+    height: calc(space(m) * 1.5);
+    width: calc(space(m) * 1.5);
+  }
+
+}

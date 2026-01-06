@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+/* Post list */
+.list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: space(l);
+
+    article {
+        background: paint(white);
+        border-radius: 5px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        header {
+            margin: 0;
+
+            h3 {
+                color: paint(black);
+                font-size: font-size(s);
+            }
+        }
+
+        footer {
+            background: none;
+        }
+    }
+} 

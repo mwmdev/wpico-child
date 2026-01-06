@@ -1,0 +1,10 @@
+@use "sass:map";
+
+$colors: (
+    primary: PRIMARY_COLOR,
+    secondary: SECONDARY_COLOR,
+) !default;
+
+@function paint($key) {
+    @return map.get($colors, $key);
+}
