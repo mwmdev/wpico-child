@@ -10,8 +10,8 @@ const wpPot = require('gulp-wp-pot');
 
 // Configuration
 const config = {
-    proxyURL: 'localhost:8000', // Change this to match your local development URL
-    textDomain: 'wpico-child',
+    proxyURL: 'localhost:8001',
+    textDomain: 'c7',
     paths: {
         styles: {
             src: 'assets/sass/**/*.scss',

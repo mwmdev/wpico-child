@@ -1,8 +1,8 @@
 @use "sass:map";
 
 /* Outer and inner widths */
-$outer-width: OUTER_WIDTH !default;
-$inner-width: INNER_WIDTH !default;
+$outer-width: 1536px !default;
+$inner-width: 1280px !default;
 
 /* Breakpoints */
 $breakpoints: (
