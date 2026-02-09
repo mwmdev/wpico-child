@@ -1,0 +1,137 @@
+@use "../abstracts" as *;
+
+// ---------------------------------------------------------------------------
+// Page Hero (compact version of homepage .hero)
+// ---------------------------------------------------------------------------
+.page-hero {
+    background: linear-gradient(135deg, paint(primary), paint(accent));
+    min-height: 40vh;
+    overflow: hidden;
+    padding: space(xxl) space(m) space(l);
+    position: relative;
+
+    &__overlay {
+        background: url("../../img/civildefaultbg.png") center / cover no-repeat;
+        filter: brightness(0.75);
+        inset: 0;
+        position: absolute;
+        z-index: 0;
+    }
+
+    &__shape {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    h1 {
+        color: paint(white);
+        font-size: font-size(xxl);
+        font-weight: 200;
+        margin: 0 0 space(l) space(s);
+        position: relative;
+        width: 75%;
+        z-index: 20;
+        text-shadow: none;
+
+        &::before {
+            display: none;
+        }
+    }
+
+    &__blur {
+        background: rgba(15, 23, 42, 0.5);
+        filter: blur(40px);
+        height: 8rem;
+        margin-top: -6rem;
+        position: relative;
+        width: 60%;
+        z-index: 10;
+    }
+
+    @media (min-width: breakpoint(l)) {
+        padding: space(xxl) * 2 space(l) space(xxl);
+
+        h1 {
+            font-size: font-size(xxl) * 1.6;
+            margin-left: space(l);
+            width: 50%;
+        }
+    }
+
+    @media (min-width: breakpoint(xl)) {
+        h1 {
+            font-size: font-size(xxl) * 2;
+            width: 40%;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Page Content (white card overlapping hero, mirrors .communique)
+// ---------------------------------------------------------------------------
+.page-content {
+    background: paint(white);
+    font-size: font-size(m);
+    line-height: 1.7;
+    margin-top: -2.5rem;
+    padding: space(l);
+    position: relative;
+    width: 83%;
+    z-index: 10;
+
+    border-top-right-radius: 2px;
+
+    h2 {
+        color: paint(accent);
+        font-size: font-size(xl);
+        font-weight: 600;
+        margin-top: space(l);
+        margin-bottom: space(s);
+        text-shadow: none;
+    }
+
+    h3 {
+        color: paint(primary);
+        font-size: font-size(l);
+        font-weight: 600;
+        margin-top: space(m);
+        margin-bottom: space(xs);
+        text-shadow: none;
+    }
+
+    a {
+        color: paint(secondary);
+        font-weight: 600;
+
+        &:hover {
+            color: paint(accent);
+        }
+    }
+
+    ul {
+        margin-bottom: space(m);
+        padding-left: space(m);
+
+        li {
+            margin-bottom: space(3xs);
+        }
+    }
+
+    strong {
+        color: paint(primary);
+        font-weight: 700;
+    }
+
+    p {
+        margin-bottom: space(s);
+    }
+
+    @media (min-width: breakpoint(l)) {
+        margin-top: -6rem;
+        padding: space(xl);
+        width: 60%;
+    }
+}

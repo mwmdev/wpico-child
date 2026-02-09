@@ -6,6 +6,8 @@
 @use "components/search";
 @use "components/list";
 @use "components/buttons";
+@use "components/member-grid";
+@use "components/event-list";
 
 // Layout
 @use "layout/header";
@@ -15,3 +17,4 @@
 
 // Pages
 @use "pages/home";
+@use "pages/page";

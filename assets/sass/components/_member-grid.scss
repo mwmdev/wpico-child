@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+
+// ---------------------------------------------------------------------------
+// Member Grid (Steering Committee page)
+// Used in WP editor as: <div class="member-grid">...</div>
+// ---------------------------------------------------------------------------
+.member-grid {
+    display: grid;
+    gap: space(m);
+    grid-template-columns: 1fr;
+
+    .member {
+        border-bottom: 1px solid paint(lighter);
+        padding-bottom: space(s);
+
+        &__name {
+            color: paint(primary);
+            display: block;
+            font-weight: 700;
+        }
+
+        &__org {
+            color: paint(accent);
+            display: block;
+            font-size: font-size(s);
+        }
+    }
+
+    @media (min-width: breakpoint(m)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: breakpoint(l)) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: breakpoint(xl)) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

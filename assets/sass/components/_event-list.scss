@@ -1,0 +1,46 @@
+@use "../abstracts" as *;
+
+// ---------------------------------------------------------------------------
+// Event List (Events Calendar page)
+// Used in WP editor as: <div class="event-list">...</div>
+// ---------------------------------------------------------------------------
+.event-list {
+
+    .event {
+        border-bottom: 1px solid paint(lighter);
+        padding: space(s) 0;
+
+        &__date {
+            color: paint(secondary);
+            display: block;
+            font-size: font-size(s);
+            font-weight: 700;
+            margin-bottom: space(3xs);
+        }
+
+        &__type {
+            background: paint(lightest);
+            border-radius: 2px;
+            color: paint(accent);
+            display: inline-block;
+            font-size: font-size(xs);
+            font-weight: 700;
+            margin-bottom: space(3xs);
+            padding: space(3xs) space(2xs);
+            text-transform: uppercase;
+        }
+
+        &__title {
+            color: paint(primary);
+            display: block;
+            font-size: font-size(m);
+            font-weight: 700;
+            margin-bottom: space(3xs);
+        }
+
+        &__desc {
+            color: paint(black);
+            font-size: font-size(s);
+        }
+    }
+}
