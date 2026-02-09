@@ -1,146 +1,170 @@
 @use "../abstracts" as *;
-@use "sass:color";
 
 /* Mobile menu */
-body > header {
+.site-header {
 
-  /* Toggle: shows and hides the menu */
-  #nav-toggle {
-    display: none;
-  }
-  #nav-toggle:checked~nav{
-    display: block;
-  }
-
-  label {
-    display: block;
-    position: absolute;
-    right: space(m);
-    top: space(m);
-
-    /* Hamburger button */
-    .nav-toggle-btn {
-      display: block;
-      background: url($burger) center center no-repeat;
-      height: 28px;
-      width: 28px;
+    /* Toggle: shows and hides the menu */
+    #nav-toggle {
+        display: none;
     }
-
-    /* Breakpoint L */
-    @media (min-width: breakpoint(l)) {
-      display: none !important;
-    }
-
-  }
-
-  /* Menu */
-  nav {
-    background: paint(white);
-    display: none;
-    margin: 0;
-    padding: space(l) space(xxl) space(l) space(xl);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    
-    label {
-      @extend .close-btn !optional;
-    }
-
-    ul {
-      display: block;
-
-      li {
+    #nav-toggle:checked ~ nav {
         display: block;
-        margin-bottom: space(m);
-        padding: 0;
-        position: relative;
+    }
 
-        a{
-          background-position: left center;
-          color: paint(darker);
-          display: block;
-          font-family: $secondary-font;
-          font-size: font-size(s);
-          padding-left: space(xl);
-          text-transform: uppercase;
+    > .container > label {
+        display: block;
+        position: absolute;
+        right: space(m);
+        top: space(m);
 
-          &:hover {
-            color: paint(darkest);
-          }
-
+        /* Hamburger button */
+        .nav-toggle-btn {
+            display: block;
+            background: url($burger) center center no-repeat;
+            height: 28px;
+            width: 28px;
         }
 
-      }
-
+        @media (min-width: breakpoint(l)) {
+            display: none !important;
+        }
     }
-    
-    /* Breakpoint L: Desktop menu */
-    @media (min-width: breakpoint(l)) {
-      background: transparent;
-      bottom: 0;
-      display: block;
-      float: none;
-      margin: 0;
-      padding: 0;
-      top: initial;
-      left: initial;
-      
-      
-     label {
-       display: none !important;
-     } 
-      
-      ul {
-        display: inline-block;
+
+    /* Menu */
+    nav {
+        background: paint(white);
+        display: none;
         margin: 0;
-        padding: 0;
-        
-         li {
-           display: inline-flex;
-           margin: 0 space(2xs) 0 0;
-           height: 60px;
-           
-           a {
-             align-items: center;
-             background: color.adjust(paint(lightest), $lightness: -5%);
-             border-top-left-radius: 10px;
-             border-top-right-radius: 10px;
-             border-bottom-left-radius: 0;
-             border-bottom-right-radius: 0;
-             border-bottom: 1px solid paint(lighter);
-             box-sizing: border-box;
-             color: paint(darkest);
-             display: flex;
-             font-size: font-size(s);
-             font-weight: 600;
-             height: 100%;
-             line-height: space(s);
-             padding: space(xs) space(xs);
-             margin: 0;
-             max-width: 250px;
-             text-align: center;
-             text-transform: none;
-             text-shadow: 1px 1px 3px paint(white);
+        padding: space(l) space(xxl) space(l) space(xl);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 60;
 
-             &[aria-current="page"] {
-              background: paint(lightest);
-              border-bottom: 1px solid paint(lightest);
-             }
+        > label {
+            @extend .close-btn !optional;
+        }
 
-             &:hover {
-              background: paint(lightest);
+        ul {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: block;
+                margin-bottom: space(m);
+                padding: 0;
+
+                a {
+                    color: paint(darker);
+                    display: block;
+                    font-family: $secondary-font;
+                    font-size: font-size(s);
+                    text-decoration: none;
+                    text-transform: uppercase;
+
+                    &:hover {
+                        color: paint(secondary);
+                    }
+                }
+            }
+        }
+
+        /* Desktop menu */
+        @media (min-width: breakpoint(l)) {
+            background: transparent;
+            display: flex;
+            align-items: flex-end;
+            gap: space(xs);
+            flex: 1;
+            padding: 0;
+            position: static;
+
+            > label {
+                display: none !important;
             }
 
-          }
-           
-         }
-        
-      }
-      
+            ul {
+                display: flex;
+                align-items: center;
+                gap: space(3xs);
+
+                li {
+                    display: inline-flex;
+                    margin: 0;
+
+                    a {
+                        color: paint(primary);
+                        font-size: font-size(s);
+                        font-weight: 600;
+                        padding: space(2xs) space(3xs);
+                        position: relative;
+                        text-transform: none;
+
+                        /* Expanding underline on hover */
+                        &::after {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            width: 0;
+                            height: 2px;
+                            background: paint(secondary);
+                            transition: width 0.25s ease, left 0.25s ease;
+                        }
+
+                        &:hover::after,
+                        &[aria-current="page"]::after {
+                            width: 100%;
+                            left: 0;
+                        }
+
+                        &[aria-current="page"] {
+                            color: paint(secondary);
+                        }
+
+                        &:hover {
+                            color: paint(secondary);
+                        }
+                    }
+                }
+            }
+        }
     }
 
-  }
-  
+    /* Nav extras (language + social icons) */
+    .nav-extras {
+        display: flex;
+        align-items: center;
+        gap: space(xs);
+        margin-top: space(m);
+        padding-top: space(m);
+        border-top: 1px solid paint(lighter);
+
+        a {
+            color: paint(darker);
+            text-decoration: none;
+            font-family: $secondary-font;
+            font-size: font-size(s);
+            font-weight: 600;
+
+            &:hover {
+                color: paint(secondary);
+            }
+
+            svg {
+                display: block;
+            }
+        }
+
+        @media (min-width: breakpoint(l)) {
+            margin-top: 0;
+            margin-left: auto;
+            padding-top: 0;
+            border-top: 0;
+        }
+    }
 }

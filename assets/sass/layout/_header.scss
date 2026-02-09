@@ -1,73 +1,89 @@
 @use "../abstracts" as *;
 
-body > header {
-    background-color: paint(lighter);
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    min-height: 350px;
-    position: relative;
-    padding: 0;
+/* Top banner — sticky gradient bar */
+.top-banner {
+    background: linear-gradient(to right, paint(primary), paint(accent));
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    font-size: font-size(s);
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: space(2xs);
+        padding-bottom: space(2xs);
+    }
+
+    span {
+        color: paint(white);
+    }
 
     a {
-        color: paint(darkest);
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: space(2xs);
+        padding: space(2xs) space(xs);
+        background: rgba(paint(primary), 0.5);
         text-decoration: none;
-        width: 100%;
-        h1 {
-            background: paint(lighter);
-            border-radius: 25px;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            color: paint(darkest);
-            font-size: font-size(l);
-            line-height: space(l);
-            padding: space(xs) space(s) space(xs) space(xxl);
-            text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
-            width: 100%;
 
-            &::before {
-                bottom: 12px;
-                left: 15px;
-            }
-            &::after {
-                background: paint(lightest);
-                border-radius: 50%;
-                bottom: 22px;
-                content: '';
-                display: block;
-                height: 30px;
-                left: 25px;
-                position: absolute;
-                width: 30px;
-                z-index: 2;
-            }
+        span {
+            background: linear-gradient(to top left, paint(highlight), paint(secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
+        svg {
+            color: paint(highlight);
+        }
+
+        &:hover span {
+            filter: brightness(1.2);
+        }
     }
 
-    small {
-        color: paint(white);
+    @media (max-width: breakpoint(s)) {
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        text-align: center;
+
+        .container {
+            flex-direction: column;
+            gap: space(2xs);
+        }
+    }
+}
+
+/* Site header — transparent, logo + nav */
+.site-header {
+    position: relative;
+    z-index: 40;
+
+    > .container {
+        display: flex;
+        align-items: flex-end;
+        gap: space(l);
+        padding-top: space(m);
+        padding-bottom: space(xs);
+    }
+
+    &__logo {
         display: block;
-        font-family: $secondary-font;
-        font-size: font-size(m);
-        font-weight: 800;
-        line-height: space(m);
-        margin-bottom: space(xxl);
-        max-width: 800px;
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        flex-shrink: 0;
+
+        img {
+            width: 10rem;
+            height: auto;
+            transition: opacity 0.2s ease;
+        }
+
+        &:hover img {
+            opacity: 0.8;
+        }
     }
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: paint(darker);
-        opacity: 0.2;
-    }
-
-
-} 
+}

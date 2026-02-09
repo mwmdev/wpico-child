@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: Wpico Team\n"
 "Last-Translator: Wpico Team\n"
-"POT-Creation-Date: 2026-02-09 20:55+0000\n"
+"POT-Creation-Date: 2026-02-09 21:48+0000\n"
 "Report-Msgid-Bugs-To: https://github.com/wpico/wpico-child/issues\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -53,7 +53,7 @@ msgstr ""
 msgid "The 2025 C7 Communique is now available"
 msgstr ""
 
-#: front-page.php:47
+#: front-page.php:47, header.php:13
 msgid "Global Justice, Together."
 msgstr ""
 
@@ -123,4 +123,20 @@ msgstr ""
 
 #: front-page.php:122
 msgid "Discover our resources"
+msgstr ""
+
+#: header.php:14
+msgid "Download the Communique - Opens in a new tab"
+msgstr ""
+
+#: header.php:15
+msgid "Read the communique"
+msgstr ""
+
+#: header.php:53
+msgid "Search"
+msgstr ""
+
+#: header.php:54
+msgid "Ok"
 msgstr ""
