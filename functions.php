@@ -11,6 +11,10 @@ function c7_load_textdomain() {
 }
 add_action('after_setup_theme', 'c7_load_textdomain');
 
+add_action('after_setup_theme', function() {
+    add_theme_support( 'post-thumbnails' );
+});
+
 /**
  * Enqueue parent style and child style
  */
@@ -51,3 +55,65 @@ function c7_enqueue_fonts() {
     );
 }
 add_action('wp_enqueue_scripts', 'c7_enqueue_fonts');
+
+/**
+ * Bilingual support (EN/FR)
+ *
+ * French pages live under a "fr" parent page, so /fr/slug/ = French.
+ * Language detection checks page ancestry. Locale switching loads fr_FR.mo.
+ */
+
+function c7_get_lang() {
+    static $lang = null;
+    if ( $lang !== null ) return $lang;
+
+    if ( ! is_page() ) {
+        $lang = 'en';
+        return $lang;
+    }
+
+    $fr_page = get_page_by_path( 'fr' );
+    if ( ! $fr_page ) {
+        $lang = 'en';
+        return $lang;
+    }
+
+    $current_id = get_queried_object_id();
+    $lang = ( $current_id === $fr_page->ID || in_array( $fr_page->ID, get_post_ancestors( $current_id ) ) )
+        ? 'fr' : 'en';
+    return $lang;
+}
+
+function c7_get_translation_url() {
+    if ( ! is_page() ) return home_url( '/' );
+
+    $current = get_queried_object();
+    if ( ! $current ) return home_url( '/' );
+
+    if ( c7_get_lang() === 'fr' ) {
+        // French → English: strip "fr/" prefix
+        $slug = $current->post_name;
+        $fr_page = get_page_by_path( 'fr' );
+        if ( $fr_page && $current->ID === $fr_page->ID ) return home_url( '/' );
+        $en_page = get_page_by_path( $slug );
+        return $en_page ? get_permalink( $en_page ) : home_url( '/' );
+    }
+
+    // English → French: prepend "fr/" prefix
+    $slug = $current->post_name;
+    $fr_page = get_page_by_path( 'fr/' . $slug );
+    return $fr_page ? get_permalink( $fr_page ) : home_url( '/fr/' );
+}
+
+function c7_switch_locale() {
+    if ( c7_get_lang() === 'fr' ) {
+        switch_to_locale( 'fr_FR' );
+    }
+}
+add_action( 'template_redirect', 'c7_switch_locale' );
+
+function c7_body_class_lang( $classes ) {
+    $classes[] = 'lang-' . c7_get_lang();
+    return $classes;
+}
+add_filter( 'body_class', 'c7_body_class_lang' );

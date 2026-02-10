@@ -1,0 +1,80 @@
+@use "../abstracts" as *;
+
+// ---------------------------------------------------------------------------
+// News Article List
+// ---------------------------------------------------------------------------
+.news-list {
+    max-width: breakpoint(l);
+    margin: 0 auto;
+    padding: 0 space(s) space(xxl);
+
+    @media (min-width: breakpoint(l)) {
+        width: 60%;
+        margin: 0;
+        margin-left: 20%;
+        padding: 0 0 space(xxl);
+    }
+}
+
+.news-item {
+    border-bottom: 2px solid paint(lightest);
+    padding: space(m) 0;
+
+    // Article image
+    &__img {
+        overflow: hidden;
+
+        img {
+            display: block;
+            filter: brightness(0.75);
+            object-fit: cover;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+        }
+    }
+
+    // Title overlapping image
+    &__title {
+        background: paint(white);
+        color: paint(accent);
+        font-size: font-size(xl);
+        font-weight: 300;
+        margin-top: -#{space(l)};
+        padding: space(m) space(s) 0 0;
+        position: relative;
+        text-shadow: none;
+        width: 80%;
+        z-index: 1;
+
+        @media (min-width: breakpoint(l)) {
+            font-size: font-size(xxl);
+        }
+    }
+
+    // Date
+    &__date {
+        color: paint(primary);
+        display: block;
+        font-weight: 700;
+        margin: space(3xs) 0 space(xs);
+    }
+
+    // Excerpt
+    &__excerpt {
+        font-size: font-size(m);
+        line-height: 1.7;
+
+        p {
+            margin-bottom: space(xs);
+        }
+
+        a {
+            color: paint(secondary);
+            font-weight: 600;
+
+            &:hover {
+                color: paint(accent);
+            }
+        }
+    }
+}

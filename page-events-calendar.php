@@ -20,9 +20,24 @@
         <div class="page-hero__blur"></div>
     </section>
 
-    <article class="page-content">
-        <?php the_content(); ?>
-    </article>
+    <?php
+    $content = apply_filters( 'the_content', get_the_content() );
+
+    // Split at the event-list div to separate intro from events
+    $parts = preg_split( '/(<div class="event-list">)/i', $content, 2, PREG_SPLIT_DELIM_CAPTURE );
+    $intro  = isset( $parts[0] ) ? trim( $parts[0] ) : '';
+    $events = ( isset( $parts[1] ) && isset( $parts[2] ) ) ? $parts[1] . $parts[2] : '';
+    ?>
+
+    <?php if ( $intro ) : ?>
+    <div class="page-content">
+        <?php echo $intro; ?>
+    </div>
+    <?php endif; ?>
+
+    <div class="events-wrap">
+        <?php echo $events; ?>
+    </div>
 
     <?php endwhile; ?>
 </main>

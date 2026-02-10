@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: Wpico Team\n"
 "Last-Translator: Wpico Team\n"
-"POT-Creation-Date: 2026-02-09 21:48+0000\n"
+"POT-Creation-Date: 2026-02-10 15:56+0000\n"
 "Report-Msgid-Bugs-To: https://github.com/wpico/wpico-child/issues\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -25,103 +25,103 @@ msgstr ""
 msgid "Privacy Policy"
 msgstr ""
 
-#: footer.php:12
+#: footer.php:13
 msgid "Contact"
 msgstr ""
 
-#: footer.php:16
+#: footer.php:17
 msgid "Visit X Profile"
 msgstr ""
 
-#: footer.php:21
+#: footer.php:22
 msgid "Visit LinkedIn Profile"
 msgstr ""
 
-#: front-page.php:28
+#: front-page.php:29
 msgid "Global justice, together."
 msgstr ""
 
-#: front-page.php:36
+#: front-page.php:37
 msgid "The Civil Society 7 (C7) is an official G7 engagement group representing civil society interests and developing recommendations to be escalated into G7 Summit decisions."
 msgstr ""
 
-#: front-page.php:39
+#: front-page.php:40
 msgid "Read more about the C7"
 msgstr ""
 
-#: front-page.php:46
+#: front-page.php:47
 msgid "The 2025 C7 Communique is now available"
 msgstr ""
 
-#: front-page.php:47, header.php:13
+#: front-page.php:48, header.php:13
 msgid "Global Justice, Together."
 msgstr ""
 
-#: front-page.php:49
+#: front-page.php:50
 msgid "Read the Communique"
 msgstr ""
 
-#: front-page.php:71
+#: front-page.php:72
 msgid "Defining tomorrow, today."
 msgstr ""
 
-#: front-page.php:72
+#: front-page.php:73
 msgid "Through a thoughtful balancing of Government of Canada G7 objectives and international civil society concerns, we've curated a list of thematic priorities and established dedicated working groups to tackle them."
 msgstr ""
 
-#: front-page.php:74
+#: front-page.php:75
 msgid "Read more about our working groups"
 msgstr ""
 
-#: front-page.php:84
+#: front-page.php:85, page-resources.php:9
 msgid "Climate, Energy & Environment"
 msgstr ""
 
-#: front-page.php:88
+#: front-page.php:89, page-resources.php:15
 msgid "Economic Justice"
 msgstr ""
 
-#: front-page.php:92
+#: front-page.php:93, page-resources.php:21
 msgid "Humanitarian Action & Peace"
 msgstr ""
 
-#: front-page.php:96
+#: front-page.php:97, page-resources.php:27
 msgid "Sustainable Development"
 msgstr ""
 
-#: front-page.php:105
+#: front-page.php:106
 msgid "Keep up with our news"
 msgstr ""
 
-#: front-page.php:106
+#: front-page.php:107
 msgid "Join the conversation and help shape the future of global governance."
 msgstr ""
 
-#: front-page.php:108
+#: front-page.php:109
 msgid "Read our news updates"
 msgstr ""
 
-#: front-page.php:112
+#: front-page.php:113
 msgid "Participate in C7 events"
 msgstr ""
 
-#: front-page.php:113
+#: front-page.php:114
 msgid "Discover the thematic priorities that guide our work and advocacy."
 msgstr ""
 
-#: front-page.php:115
+#: front-page.php:116
 msgid "See our events' calendar"
 msgstr ""
 
-#: front-page.php:119
+#: front-page.php:120
 msgid "Explore our resources"
 msgstr ""
 
-#: front-page.php:120
+#: front-page.php:121
 msgid "Learn more about the Civil Society 7 and our mission to promote global justice."
 msgstr ""
 
-#: front-page.php:122
+#: front-page.php:123
 msgid "Discover our resources"
 msgstr ""
 
@@ -139,4 +139,68 @@ msgstr ""
 
 #: header.php:54
 msgid "Ok"
+msgstr ""
+
+#: page-resources.php:36
+msgid "Debt Policy Paper"
+msgstr ""
+
+#: page-resources.php:41
+msgid "Conflict Policy Paper"
+msgstr ""
+
+#: page-resources.php:49
+msgid "2024 Italy Communiqué"
+msgstr ""
+
+#: page-resources.php:54
+msgid "2023 Japan Communiqué"
+msgstr ""
+
+#: page-resources.php:59
+msgid "2022 Germany Communiqué"
+msgstr ""
+
+#: page-resources.php:88
+msgid "Discover additional information, statements and documentation from current and past C7 Summits."
+msgstr ""
+
+#: page-resources.php:94
+msgid "The 2025 C7 Communiqué is now available"
+msgstr ""
+
+#: page-resources.php:95
+msgid "Building a more just, equitable and sustainable world — for everyone."
+msgstr ""
+
+#: page-resources.php:97
+msgid "Download the Communiqué"
+msgstr ""
+
+#: page-resources.php:111
+msgid "Thematic Priorities"
+msgstr ""
+
+#: page-resources.php:121, page-resources.php:137, page-resources.php:153, page-thematic-priorities.php:113
+msgid "Download PDF"
+msgstr ""
+
+#: page-resources.php:129
+msgid "Other Resources"
+msgstr ""
+
+#: page-resources.php:145
+msgid "Past Communiqués"
+msgstr ""
+
+#: page-thematic-priorities.php:36
+msgid "Democracy & Civic Space"
+msgstr ""
+
+#: page-thematic-priorities.php:37
+msgid "Gender Equality"
+msgstr ""
+
+#: page-thematic-priorities.php:38
+msgid "Evolving Technology"
 msgstr ""

@@ -1,14 +1,14 @@
-# French translation for Wpico Child Theme
-# Copyright (C) 2026 Wpico Child Theme
-# This file is distributed under the same license as the Wpico Child Theme package.
+# French translation for C7 Theme
+# Copyright (C) 2026 C7 Theme
+# This file is distributed under the same license as the C7 Theme package.
 # Wpico Team, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Wpico Child Theme 1.0.0\n"
 "Report-Msgid-Bugs-To: https://github.com/wpico/wpico-child/issues\n"
-"POT-Creation-Date: 2026-01-06 00:54+0000\n"
-"PO-Revision-Date: 2026-01-06 00:54+0000\n"
+"POT-Creation-Date: 2026-02-09 21:48+0000\n"
+"PO-Revision-Date: 2026-02-10 00:00+0000\n"
 "Last-Translator: Wpico Team\n"
 "Language-Team: French <fr@li.org>\n"
 "Language: fr_FR\n"
@@ -22,6 +22,194 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+#: footer.php:7
+msgid "Cooperation Canada brings together Canada's international development and humanitarian organizations and advocates for them by convening sector leaders, influencing policy and building capacity. Together, we work with partners both inside and outside Canada to build a world that's fair, safe and sustainable for all."
+msgstr "Coopération Canada rassemble les organisations canadiennes de développement international et d'aide humanitaire et les défend en réunissant les leaders du secteur, en influençant les politiques et en renforçant les capacités. Ensemble, nous travaillons avec des partenaires au Canada et à l'étranger pour bâtir un monde juste, sûr et durable pour tous."
+
+#: footer.php:11
+msgid "Privacy Policy"
+msgstr "Politique de confidentialité"
+
+#: footer.php:12
+msgid "Contact"
+msgstr "Contact"
+
+#: footer.php:16
+msgid "Visit X Profile"
+msgstr "Visiter le profil X"
+
+#: footer.php:21
+msgid "Visit LinkedIn Profile"
+msgstr "Visiter le profil LinkedIn"
+
+#: front-page.php:28
+msgid "Global justice, together."
+msgstr "Justice mondiale, ensemble."
+
+#: front-page.php:36
+msgid "The Civil Society 7 (C7) is an official G7 engagement group representing civil society interests and developing recommendations to be escalated into G7 Summit decisions."
+msgstr "Le Civil Society 7 (C7) est un groupe d'engagement officiel du G7 qui représente les intérêts de la société civile et élabore des recommandations destinées à être intégrées aux décisions du Sommet du G7."
+
+#: front-page.php:39
+msgid "Read more about the C7"
+msgstr "En savoir plus sur le C7"
+
+#: front-page.php:46
+msgid "The 2025 C7 Communique is now available"
+msgstr "Le communiqué C7 2025 est maintenant disponible"
+
+#: front-page.php:47, header.php:13
+msgid "Global Justice, Together."
+msgstr "Justice mondiale, ensemble."
+
+#: front-page.php:49
+msgid "Read the Communique"
+msgstr "Lire le communiqué"
+
+#: front-page.php:71
+msgid "Defining tomorrow, today."
+msgstr "Définir demain, aujourd'hui."
+
+#: front-page.php:72
+msgid "Through a thoughtful balancing of Government of Canada G7 objectives and international civil society concerns, we've curated a list of thematic priorities and established dedicated working groups to tackle them."
+msgstr "Grâce à un équilibre réfléchi entre les objectifs du gouvernement du Canada pour le G7 et les préoccupations de la société civile internationale, nous avons établi une liste de priorités thématiques et mis en place des groupes de travail dédiés pour les aborder."
+
+#: front-page.php:74
+msgid "Read more about our working groups"
+msgstr "En savoir plus sur nos groupes de travail"
+
+#: front-page.php:84
+msgid "Climate, Energy & Environment"
+msgstr "Climat, énergie et environnement"
+
+#: front-page.php:88
+msgid "Economic Justice"
+msgstr "Justice économique"
+
+#: front-page.php:92
+msgid "Humanitarian Action & Peace"
+msgstr "Action humanitaire et paix"
+
+#: front-page.php:96
+msgid "Sustainable Development"
+msgstr "Développement durable"
+
+#: front-page.php:105
+msgid "Keep up with our news"
+msgstr "Suivez nos nouvelles"
+
+#: front-page.php:106
+msgid "Join the conversation and help shape the future of global governance."
+msgstr "Joignez-vous à la conversation et contribuez à façonner l'avenir de la gouvernance mondiale."
+
+#: front-page.php:108
+msgid "Read our news updates"
+msgstr "Lire nos nouvelles"
+
+#: front-page.php:112
+msgid "Participate in C7 events"
+msgstr "Participez aux événements du C7"
+
+#: front-page.php:113
+msgid "Discover the thematic priorities that guide our work and advocacy."
+msgstr "Découvrez les priorités thématiques qui guident notre travail et notre plaidoyer."
+
+#: front-page.php:115
+msgid "See our events' calendar"
+msgstr "Voir notre calendrier d'événements"
+
+#: front-page.php:119
+msgid "Explore our resources"
+msgstr "Explorez nos ressources"
+
+#: front-page.php:120
+msgid "Learn more about the Civil Society 7 and our mission to promote global justice."
+msgstr "En savoir plus sur le Civil Society 7 et notre mission de promouvoir la justice mondiale."
+
+#: front-page.php:122
+msgid "Discover our resources"
+msgstr "Découvrir nos ressources"
+
+#: header.php:14
+msgid "Download the Communique - Opens in a new tab"
+msgstr "Télécharger le communiqué - Ouvre dans un nouvel onglet"
+
+#: header.php:15
+msgid "Read the communique"
+msgstr "Lire le communiqué"
+
+#: header.php:53
+msgid "Search"
+msgstr "Rechercher"
+
+#: header.php:54
+msgid "Ok"
+msgstr "Ok"
+
+#: page-thematic-priorities.php
+msgid "Download PDF"
+msgstr "Télécharger le PDF"
+
+#: page-thematic-priorities.php
+msgid "Democracy & Civic Space"
+msgstr "Démocratie et espace civique"
+
+#: page-thematic-priorities.php
+msgid "Gender Equality"
+msgstr "Égalité des genres"
+
+#: page-thematic-priorities.php
+msgid "Evolving Technology"
+msgstr "Technologies en évolution"
+
+#: page-resources.php
+msgid "Discover additional information, statements and documentation from current and past C7 Summits."
+msgstr "Découvrez des informations supplémentaires, des déclarations et de la documentation des sommets C7 actuels et passés."
+
+#: page-resources.php
+msgid "The 2025 C7 Communiqué is now available"
+msgstr "Le communiqué C7 2025 est maintenant disponible"
+
+#: page-resources.php
+msgid "Building a more just, equitable and sustainable world — for everyone."
+msgstr "Bâtir un monde plus juste, équitable et durable — pour tous."
+
+#: page-resources.php
+msgid "Download the Communiqué"
+msgstr "Télécharger le communiqué"
+
+#: page-resources.php
+msgid "Thematic Priorities"
+msgstr "Priorités thématiques"
+
+#: page-resources.php
+msgid "Other Resources"
+msgstr "Autres ressources"
+
+#: page-resources.php
+msgid "Debt Policy Paper"
+msgstr "Document de politique sur la dette"
+
+#: page-resources.php
+msgid "Conflict Policy Paper"
+msgstr "Document de politique sur les conflits"
+
+#: page-resources.php
+msgid "Past Communiqués"
+msgstr "Communiqués précédents"
+
+#: page-resources.php
+msgid "2024 Italy Communiqué"
+msgstr "Communiqué 2024 Italie"
+
+#: page-resources.php
+msgid "2023 Japan Communiqué"
+msgstr "Communiqué 2023 Japon"
+
+#: page-resources.php
+msgid "2022 Germany Communiqué"
+msgstr "Communiqué 2022 Allemagne"
 
 #: functions.php:112
 msgid "No videos found"
@@ -38,11 +226,3 @@ msgstr "Aucune ressource trouvée"
 #: functions.php:190
 msgid "Theme"
 msgstr "Thématique"
-
-#: header.php:42
-msgid "Search"
-msgstr "Rechercher"
-
-#: header.php:43
-msgid "Ok"
-msgstr "Ok"

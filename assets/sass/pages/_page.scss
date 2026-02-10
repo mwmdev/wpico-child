@@ -11,7 +11,10 @@
     position: relative;
 
     &__overlay {
-        background: url("../../img/civildefaultbg.png") center / cover no-repeat;
+        background-image: url("../../img/civildefaultbg.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         filter: brightness(0.75);
         inset: 0;
         position: absolute;

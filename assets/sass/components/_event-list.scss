@@ -1,14 +1,30 @@
 @use "../abstracts" as *;
 
 // ---------------------------------------------------------------------------
+// Events Page Wrapper
+// ---------------------------------------------------------------------------
+.events-wrap {
+    max-width: breakpoint(l);
+    margin: 0 auto;
+    padding: 0 space(s) space(xxl);
+
+    @media (min-width: breakpoint(l)) {
+        width: 60%;
+        margin: 0;
+        margin-left: 20%;
+        padding: 0 0 space(xxl);
+    }
+}
+
+// ---------------------------------------------------------------------------
 // Event List (Events Calendar page)
 // Used in WP editor as: <div class="event-list">...</div>
 // ---------------------------------------------------------------------------
 .event-list {
 
     .event {
-        border-bottom: 1px solid paint(lighter);
-        padding: space(s) 0;
+        border-bottom: 2px solid paint(lightest);
+        padding: space(m) 0;
 
         &__date {
             color: paint(secondary);
@@ -33,14 +49,15 @@
         &__title {
             color: paint(primary);
             display: block;
-            font-size: font-size(m);
+            font-size: font-size(l);
             font-weight: 700;
             margin-bottom: space(3xs);
         }
 
         &__desc {
-            color: paint(black);
-            font-size: font-size(s);
+            color: paint(darker);
+            font-size: font-size(m);
+            line-height: 1.7;
         }
     }
 }

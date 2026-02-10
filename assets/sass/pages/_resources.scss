@@ -1,0 +1,208 @@
+@use "../abstracts" as *;
+
+// ---------------------------------------------------------------------------
+// Featured Communiqué Banner
+// ---------------------------------------------------------------------------
+.res-featured {
+    background: linear-gradient(to bottom left, paint(primary), paint(accent));
+    margin: 0 auto;
+    max-width: breakpoint(xl);
+    overflow: hidden;
+    padding: space(l);
+    position: relative;
+
+    @media (min-width: breakpoint(l)) {
+        padding: space(xl);
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+
+        h2 {
+            color: paint(white);
+            font-size: font-size(xl);
+            font-weight: 300;
+            margin: 0 0 space(s);
+            text-shadow: none;
+            width: 60%;
+
+            @media (min-width: breakpoint(xl)) {
+                font-size: font-size(xxl) * 1.4;
+            }
+        }
+
+        p {
+            color: paint(white);
+            font-size: font-size(m);
+            margin-bottom: space(m);
+            width: 50%;
+        }
+    }
+
+    &__btn {
+        background: rgba(paint(primary), 0.75);
+        color: paint(white);
+        display: inline-flex;
+        align-items: center;
+        gap: space(3xs);
+        font-size: font-size(s);
+        font-weight: 700;
+        padding: space(xs) space(s);
+        text-transform: uppercase;
+
+        svg {
+            color: paint(highlight);
+        }
+
+        &:hover {
+            background: paint(primary);
+        }
+    }
+
+    &__cover {
+        display: none;
+
+        @media (min-width: breakpoint(l)) {
+            display: block;
+            height: 140%;
+            object-fit: cover;
+            position: absolute;
+            right: -4rem;
+            top: -20%;
+            width: auto;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        @media (min-width: breakpoint(xl)) {
+            right: -2rem;
+            opacity: 0.8;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Resource Sections Container
+// ---------------------------------------------------------------------------
+.res-sections {
+    margin: 0 auto;
+    max-width: breakpoint(xl);
+    padding: space(l) space(s);
+
+    @media (min-width: breakpoint(l)) {
+        padding: space(xl);
+    }
+}
+
+.res-section {
+    margin-bottom: space(xl);
+
+    h2 {
+        color: paint(accent);
+        font-size: font-size(xl);
+        font-weight: 300;
+        margin-bottom: space(m);
+        text-shadow: none;
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Resource Card Grid
+// ---------------------------------------------------------------------------
+.res-grid {
+    display: grid;
+    gap: space(l);
+    grid-template-columns: 1fr;
+
+    @media (min-width: breakpoint(m)) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: breakpoint(l)) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: breakpoint(xl)) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Resource Card
+// ---------------------------------------------------------------------------
+.res-card {
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+        .res-card__title {
+            color: paint(secondary);
+        }
+
+        .res-card__dl {
+            color: paint(accent);
+        }
+    }
+
+    // Image container
+    &__img {
+        aspect-ratio: 1;
+        overflow: hidden;
+        position: relative;
+
+        > img:last-of-type {
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            width: 100%;
+            z-index: 0;
+        }
+    }
+
+    // Gradient overlay (thematic cards)
+    &__overlay {
+        background: linear-gradient(to top right, paint(secondary), paint(highlight));
+        inset: 0;
+        mix-blend-mode: multiply;
+        opacity: 0.75;
+        position: absolute;
+        z-index: 1;
+    }
+
+    // Icon overlay (thematic cards)
+    &__icon {
+        position: absolute;
+        top: space(s);
+        left: space(s);
+        width: 40px;
+        height: 40px;
+        z-index: 2;
+    }
+
+    // Title
+    &__title {
+        background: paint(white);
+        color: paint(accent);
+        display: block;
+        font-size: font-size(l);
+        font-weight: 300;
+        margin-top: -#{space(m)};
+        padding: space(xs) space(s) 0 0;
+        position: relative;
+        transition: color 0.2s;
+        width: 85%;
+        z-index: 3;
+    }
+
+    // Download label
+    &__dl {
+        color: paint(secondary);
+        display: inline-flex;
+        align-items: center;
+        font-size: font-size(s);
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: color 0.2s;
+    }
+}

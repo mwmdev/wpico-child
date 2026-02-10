@@ -20,7 +20,7 @@
 
     <header class="site-header">
         <div class="container">
-            <a class="site-header__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+            <a class="site-header__logo" href="<?php echo esc_url( home_url( c7_get_lang() === 'fr' ? '/fr/' : '/' ) ); ?>">
                 <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/c7-logo.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
             </a>
 
@@ -31,10 +31,10 @@
 
             <nav>
                 <label for="nav-toggle"></label>
-                <?php wp_nav_menu( array( 'menu' => 'Principal' ) ); ?>
+                <?php wp_nav_menu( array( 'menu' => c7_get_lang() === 'fr' ? 'Principal FR' : 'Principal' ) ); ?>
 
                 <div class="nav-extras">
-                    <a href="<?php echo esc_url( home_url( '/fr' ) ); ?>">Français</a>
+                    <a href="<?php echo esc_url( c7_get_translation_url() ); ?>"><?php echo c7_get_lang() === 'fr' ? 'English' : 'Français'; ?></a>
                     <a href="https://twitter.com/civil7official" target="_blank" rel="noopener" aria-label="X (Twitter)">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
                     </a>

@@ -1,6 +1,19 @@
 @use "../abstracts" as *;
 
 // ---------------------------------------------------------------------------
+// Steering Committee Wrapper
+// ---------------------------------------------------------------------------
+.committee-wrap {
+    max-width: breakpoint(xl);
+    margin: 0 auto;
+    padding: 0 space(s) space(xxl);
+
+    @media (min-width: breakpoint(l)) {
+        padding: 0 space(xl) space(xxl);
+    }
+}
+
+// ---------------------------------------------------------------------------
 // Member Grid (Steering Committee page)
 // Used in WP editor as: <div class="member-grid">...</div>
 // ---------------------------------------------------------------------------
@@ -10,19 +23,31 @@
     grid-template-columns: 1fr;
 
     .member {
-        border-bottom: 1px solid paint(lighter);
-        padding-bottom: space(s);
+        &__img {
+            aspect-ratio: 1;
+            display: block;
+            object-fit: cover;
+            width: 100%;
+        }
 
         &__name {
-            color: paint(primary);
+            background: paint(white);
+            color: paint(accent);
             display: block;
-            font-weight: 700;
+            font-size: font-size(l);
+            font-weight: 300;
+            margin-top: -#{space(m)};
+            padding: space(xs) space(s) 0 0;
+            position: relative;
+            width: 75%;
+            z-index: 1;
         }
 
         &__org {
-            color: paint(accent);
+            color: paint(darker);
             display: block;
             font-size: font-size(s);
+            line-height: 1.4;
         }
     }
 

@@ -5,11 +5,12 @@
     <?php
     $img = get_stylesheet_directory_uri() . '/assets/img';
     $pdf = get_stylesheet_directory_uri() . '/assets/pdf';
-    $priorities_url = get_permalink( get_page_by_path( 'thematic-priorities' ) );
-    $what_url       = get_permalink( get_page_by_path( 'what-is-c7' ) );
-    $news_url       = get_permalink( get_page_by_path( 'news' ) );
-    $events_url     = get_permalink( get_page_by_path( 'events-calendar' ) );
-    $resources_url  = get_permalink( get_page_by_path( 'resources' ) );
+    $prefix = c7_get_lang() === 'fr' ? 'fr/' : '';
+    $priorities_url = get_permalink( get_page_by_path( $prefix . 'thematic-priorities' ) );
+    $what_url       = get_permalink( get_page_by_path( $prefix . 'what-is-c7' ) );
+    $news_url       = get_permalink( get_page_by_path( $prefix . 'news' ) );
+    $events_url     = get_permalink( get_page_by_path( $prefix . 'events-calendar' ) );
+    $resources_url  = get_permalink( get_page_by_path( $prefix . 'resources' ) );
     ?>
 
     <!-- Hero -->

@@ -1,0 +1,197 @@
+@use "../abstracts" as *;
+
+// ---------------------------------------------------------------------------
+// Thematic Priorities – Intro
+// ---------------------------------------------------------------------------
+.tp-intro {
+    border-top-right-radius: 2px;
+}
+
+// ---------------------------------------------------------------------------
+// Working Group Section
+// ---------------------------------------------------------------------------
+.tp-groups {
+    max-width: breakpoint(xl);
+    margin: space(xl) auto;
+    padding: 0 space(s);
+
+    @media (min-width: breakpoint(l)) {
+        margin-left: space(xxl) * 2;
+        padding: 0;
+    }
+}
+
+.tp-group {
+    position: relative;
+    margin-bottom: space(xxl);
+
+    @media (min-width: breakpoint(l)) {
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        margin-bottom: space(xxl) * 2;
+    }
+
+    // Photo column
+    &__photo {
+        display: none;
+
+        @media (min-width: breakpoint(l)) {
+            display: block;
+            position: relative;
+
+            img {
+                width: 100%;
+                aspect-ratio: 16 / 11;
+                object-fit: cover;
+                position: sticky;
+                top: space(l);
+            }
+        }
+    }
+
+    // Content card overlapping photo
+    &__content {
+        background: paint(white);
+        padding: space(m);
+        position: relative;
+
+        @media (min-width: breakpoint(l)) {
+            margin-left: -#{space(xl)};
+            margin-top: space(xxl);
+            padding: space(xl);
+            z-index: 1;
+        }
+
+        h2 {
+            color: paint(accent);
+            font-size: font-size(xl);
+            font-weight: 300;
+            line-height: 1.2;
+            margin: space(xs) 0 0;
+            text-shadow: none;
+
+            @media (min-width: breakpoint(xl)) {
+                font-size: font-size(xxl);
+            }
+        }
+    }
+
+    // Icon
+    &__icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    // PDF download link
+    &__pdf {
+        display: inline-flex;
+        align-items: center;
+        gap: space(3xs);
+        color: paint(secondary);
+        font-size: font-size(s);
+        font-weight: 700;
+        margin: space(3xs) 0 space(m);
+        text-transform: uppercase;
+
+        &:hover {
+            color: paint(accent);
+        }
+
+        svg {
+            flex-shrink: 0;
+        }
+    }
+
+    // Body text
+    &__body {
+        font-size: font-size(m);
+        line-height: 1.7;
+
+        p {
+            margin-bottom: space(s);
+        }
+
+        strong {
+            color: paint(primary);
+            font-weight: 700;
+        }
+
+        ul {
+            padding-left: space(m);
+            margin-bottom: space(m);
+
+            li {
+                margin-bottom: space(3xs);
+            }
+        }
+
+        a {
+            color: paint(secondary);
+            font-weight: 600;
+
+            &:hover {
+                color: paint(accent);
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Cross-cutting Themes
+// ---------------------------------------------------------------------------
+.tp-cross {
+    background: paint(accent);
+    border-radius: 2px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+    color: paint(white);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: space(s);
+
+    @media (min-width: breakpoint(l)) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        padding: space(m);
+    }
+
+    h2 {
+        color: paint(white);
+        font-size: font-size(l);
+        font-weight: 700;
+        margin: 0;
+        padding: 0 0 space(s);
+        text-shadow: none;
+
+        @media (min-width: breakpoint(l)) {
+            align-self: center;
+            border-right: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0 space(m) 0 0;
+        }
+    }
+
+    &__item {
+        padding: space(s) 0;
+        border-top: 2px solid rgba(255, 255, 255, 0.2);
+
+        @media (min-width: breakpoint(l)) {
+            border-top: none;
+            border-left: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 0 space(m);
+
+            &:first-of-type {
+                border-left: none;
+            }
+        }
+
+        img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: space(3xs);
+        }
+
+        span {
+            display: block;
+            font-size: font-size(m);
+            font-weight: 500;
+        }
+    }
+}

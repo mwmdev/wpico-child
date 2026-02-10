@@ -20,9 +20,24 @@
         <div class="page-hero__blur"></div>
     </section>
 
-    <article class="page-content">
-        <?php the_content(); ?>
-    </article>
+    <?php
+    $content = apply_filters( 'the_content', get_the_content() );
+
+    // Split at the member-grid div to separate intro from grid
+    $parts = preg_split( '/(<div class="member-grid">)/i', $content, 2, PREG_SPLIT_DELIM_CAPTURE );
+    $intro  = isset( $parts[0] ) ? trim( $parts[0] ) : '';
+    $grid   = ( isset( $parts[1] ) && isset( $parts[2] ) ) ? $parts[1] . $parts[2] : '';
+    ?>
+
+    <?php if ( $intro ) : ?>
+    <div class="page-content">
+        <?php echo $intro; ?>
+    </div>
+    <?php endif; ?>
+
+    <div class="committee-wrap">
+        <?php echo $grid; ?>
+    </div>
 
     <?php endwhile; ?>
 </main>
