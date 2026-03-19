@@ -8,7 +8,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language-Team: Wpico Team\n"
 "Last-Translator: Wpico Team\n"
-"POT-Creation-Date: 2026-03-19 09:38+0000\n"
+"POT-Creation-Date: 2026-03-19 10:25+0000\n"
 "Report-Msgid-Bugs-To: https://github.com/wpico/wpico-child/issues\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -25,95 +25,95 @@ msgstr ""
 msgid "Coordination SUD"
 msgstr ""
 
-#: footer.php:13
+#: footer.php:12
 msgid "Contact"
 msgstr ""
 
-#: footer.php:17
+#: footer.php:16
 msgid "Visit X Profile"
 msgstr ""
 
-#: footer.php:22
+#: footer.php:21
 msgid "Visit LinkedIn Profile"
 msgstr ""
 
-#: front-page.php:30, front-page.php:49
+#: front-page.php:29, front-page.php:48
 msgid "Together for change"
 msgstr ""
 
-#: front-page.php:38
+#: front-page.php:37
 msgid "The Civil Society 7 (C7) is an official G7 engagement group representing civil society interests and developing recommendations to be escalated into G7 Summit decisions."
 msgstr ""
 
-#: front-page.php:41, front-page.php:73
+#: front-page.php:40, front-page.php:72
 msgid "Defining tomorrow, today."
 msgstr ""
 
-#: front-page.php:48
+#: front-page.php:47
 msgid "The 2026 C7 Communique is now available"
 msgstr ""
 
-#: front-page.php:51
+#: front-page.php:50
 msgid "Read the Communique"
 msgstr ""
 
-#: front-page.php:74
+#: front-page.php:73
 msgid "Through a thoughtful balancing of the French G7 presidency objectives and international civil society concerns, we've curated a list of thematic priorities and established dedicated working groups to tackle them."
 msgstr ""
 
-#: front-page.php:76
+#: front-page.php:75
 msgid "Read more about our working groups"
 msgstr ""
 
-#: front-page.php:86, page-resources.php:9
+#: front-page.php:85, page-resources.php:9
 msgid "Climate"
 msgstr ""
 
-#: front-page.php:90, page-resources.php:15
+#: front-page.php:89, page-resources.php:15
 msgid "Financing"
 msgstr ""
 
-#: front-page.php:94, page-resources.php:21
+#: front-page.php:93, page-resources.php:21
 msgid "Civic Space"
 msgstr ""
 
-#: front-page.php:98, page-resources.php:27
+#: front-page.php:97, page-resources.php:27
 msgid "Health"
 msgstr ""
 
-#: front-page.php:107
+#: front-page.php:106
 msgid "Keep up with our news"
 msgstr ""
 
-#: front-page.php:108
+#: front-page.php:107
 msgid "Join the conversation and help shape the future of global governance."
 msgstr ""
 
-#: front-page.php:110
+#: front-page.php:109
 msgid "Read our news updates"
 msgstr ""
 
-#: front-page.php:114
+#: front-page.php:113
 msgid "Participate in C7 events"
 msgstr ""
 
-#: front-page.php:115
+#: front-page.php:114
 msgid "Discover the thematic priorities that guide our work and advocacy."
 msgstr ""
 
-#: front-page.php:117
+#: front-page.php:116
 msgid "See our events' calendar"
 msgstr ""
 
-#: front-page.php:121
+#: front-page.php:120
 msgid "Explore our resources"
 msgstr ""
 
-#: front-page.php:122
+#: front-page.php:121
 msgid "Learn more about the Civil Society 7 and our mission to promote global justice."
 msgstr ""
 
-#: front-page.php:124
+#: front-page.php:123
 msgid "Discover our resources"
 msgstr ""
 

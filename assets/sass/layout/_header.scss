@@ -26,6 +26,7 @@
         gap: space(2xs);
         padding: space(2xs) space(xs);
         background: rgba(paint(primary), 0.5);
+        border: 1px solid paint(highlight);
         text-decoration: none;
 
         span {
@@ -66,7 +67,7 @@
 
     > .container {
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         gap: space(l);
         padding-top: space(m);
         padding-bottom: space(xs);

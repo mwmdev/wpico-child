@@ -76,7 +76,7 @@
         @media (min-width: breakpoint(l)) {
             background: transparent;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             gap: space(xs);
             flex: 1;
             padding: 0;
@@ -89,14 +89,14 @@
             ul {
                 display: flex;
                 align-items: center;
-                gap: space(3xs);
+                gap: space(xs);
 
                 li {
                     display: inline-flex;
                     margin: 0;
 
                     a {
-                        color: paint(primary);
+                        color: #707070;
                         font-size: font-size(s);
                         font-weight: 600;
                         padding: space(2xs) space(3xs);

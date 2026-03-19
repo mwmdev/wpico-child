@@ -1,5 +1,10 @@
 @use "../abstracts" as *;
 
+.front-page {
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
 // ---------------------------------------------------------------------------
 // Hero
 // ---------------------------------------------------------------------------
@@ -64,11 +69,10 @@
     &__cover {
         bottom: auto;
         position: absolute;
-        right: -12rem;
-        top: 9rem;
-        transform: scale(1.25);
-        transform-origin: right;
-        width: 100%;
+        right: -3rem;
+        top: 5rem;
+        transform: none;
+        width: 60%;
         z-index: 20;
     }
 
@@ -76,38 +80,38 @@
         padding: space(xxl) * 3 space(l) space(xxl) * 2;
 
         h1 {
-            font-size: font-size(xxl) * 1.6;
+            font-size: font-size(xl) * 1.5;
             margin-left: space(l);
             margin-bottom: space(xxl);
-            width: 25%;
+            width: 35%;
         }
 
         &__cover {
-            right: -16rem;
-            top: auto;
-            transform: scale(1.1);
-            width: 100%;
+            right: -5rem;
+            top: 5rem;
+            transform: none;
+            width: 70%;
         }
     }
 
     @media (min-width: breakpoint(xl)) {
         h1 {
-            font-size: font-size(xxl) * 2;
-            width: 33%;
+            font-size: font-size(xl) * 1.75;
+            width: 35%;
         }
 
         &__cover {
-            right: -16rem;
-            top: -33%;
-            width: 92%;
+            right: -3rem;
+            top: 2rem;
+            width: 60%;
         }
     }
 
     @media (min-width: breakpoint(xxl)) {
         &__cover {
-            right: -25%;
-            top: -50%;
-            width: 83%;
+            right: 0;
+            top: 0;
+            width: 55%;
         }
     }
 }
@@ -157,7 +161,7 @@
 .communique-banner {
     background: linear-gradient(to bottom left, paint(primary), paint(accent));
     margin: space(m) auto space(xxl);
-    max-width: breakpoint(xxl);
+    max-width: 1450px;
     overflow: hidden;
     padding: space(l);
     position: relative;
@@ -169,7 +173,7 @@
 
     h2 {
         color: paint(white);
-        font-size: font-size(xxl);
+        font-size: font-size(xl);
         font-weight: 300;
         margin-bottom: space(s);
         text-shadow: none;
@@ -214,7 +218,7 @@
         padding: space(xl);
 
         h2 {
-            font-size: font-size(xxl) * 1.6;
+            font-size: font-size(xl) * 1.25;
             width: 50%;
         }
 
@@ -230,7 +234,7 @@
 
     @media (min-width: breakpoint(xl)) {
         h2 {
-            font-size: font-size(xxl) * 2;
+            font-size: font-size(xl) * 1.5;
         }
     }
 }
@@ -255,13 +259,13 @@
 
     &__inner {
         margin: 0 auto;
-        max-width: breakpoint(xxl);
+        max-width: 1450px;
         padding: 0 space(m);
     }
 
     h2 {
         color: paint(accent);
-        font-size: font-size(xxl);
+        font-size: font-size(xl);
         font-weight: 300;
         margin-bottom: space(s);
         margin-left: auto;
@@ -295,7 +299,7 @@
         padding-bottom: space(xxl) * 2;
 
         h2 {
-            font-size: font-size(xxl) * 1.6;
+            font-size: font-size(xl) * 1.25;
             padding-left: 0;
         }
 
@@ -306,7 +310,7 @@
 
     @media (min-width: breakpoint(xl)) {
         h2 {
-            font-size: font-size(xxl) * 2;
+            font-size: font-size(xl) * 1.5;
         }
     }
 }
@@ -315,7 +319,7 @@
 // Working Group Cards
 // ---------------------------------------------------------------------------
 .priorities {
-    max-width: breakpoint(xxl);
+    max-width: 1450px;
     margin: 0 auto;
     padding: space(xl) space(m) 0;
 
@@ -408,7 +412,7 @@
 // ---------------------------------------------------------------------------
 .info-grid {
     margin: space(xxl) * 2 auto 0;
-    max-width: breakpoint(xxl);
+    max-width: 1450px;
     padding: 0 space(m);
     position: relative;
 
@@ -513,7 +517,7 @@
         flex-direction: column;
         gap: space(m);
         margin: 0 auto;
-        max-width: breakpoint(xxl);
+        max-width: 1450px;
     }
 
     &__about {
