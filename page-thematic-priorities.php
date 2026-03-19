@@ -7,26 +7,26 @@ $prefix = c7_get_lang() === 'fr' ? 'fr/' : '';
 
 $groups = array(
     array(
-        'id'    => 'climate-energy-and-environment',
-        'icon'  => 'temp.svg',
+        'id'    => 'climat',
+        'icon'  => 'climat.svg',
         'photo' => '2ni-f1ojcxolj8q-unsplash.jpg',
         'pdf'   => 'c7-2025-climate,-energy,-the-environment_eng_web.pdf',
     ),
     array(
-        'id'    => 'economic-justice',
-        'icon'  => 'scale.svg',
+        'id'    => 'financement',
+        'icon'  => 'financement.svg',
         'photo' => 'shelby-murphy-figueroa-lechhhlxywu-unsplash.jpg',
         'pdf'   => 'c7-2025-economic-justice_eng_web-(1).pdf',
     ),
     array(
-        'id'    => 'humanitarian-action-and-peace',
-        'icon'  => 'peace.svg',
+        'id'    => 'espace-civique',
+        'icon'  => 'espace-civique.svg',
         'photo' => 'sunguk-kim-jhqbxsoruxa-unsplash.jpg',
         'pdf'   => 'c7-2025-humanitarian-action-and-peace_eng_web.pdf',
     ),
     array(
-        'id'    => 'sustainable-development',
-        'icon'  => 'growth.svg',
+        'id'    => 'sante',
+        'icon'  => 'sante.svg',
         'photo' => 'noah-buscher-x8zstuks2pm-unsplash.jpg',
         'pdf'   => 'c7-2025-sustainable-development_eng_web-(1).pdf',
     ),
@@ -42,16 +42,16 @@ $cross_cutting = array(
 <main class="page-inner">
     <?php while ( have_posts() ) : the_post(); ?>
 
-    <?php $hero_img = get_the_post_thumbnail_url( null, 'full' ); ?>
+    <?php $hero_img = get_the_post_thumbnail_url( null, 'full' ) ?: get_stylesheet_directory_uri() . '/assets/img/bandeau-thematiques.png'; ?>
     <section class="page-hero">
-        <div class="page-hero__overlay"<?php if ( $hero_img ) echo ' style="background-image:url(' . esc_url( $hero_img ) . ')"'; ?>></div>
+        <div class="page-hero__overlay" style="background-image:url(<?php echo esc_url( $hero_img ); ?>)"></div>
         <svg class="page-hero__shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 843 684" fill="none" preserveAspectRatio="none">
             <path d="M0 248.425V684H330.588C585.325 489.116 757.645 251.98 842.03 0H180.004C136 87.5834 75.8202 171.278 0 248.425Z" fill="url(#pageHeroGrad)" fill-opacity="0.75" style="mix-blend-mode:multiply"/>
-            <path d="M0 248.425V684H330.588C585.325 489.116 757.645 251.98 842.03 0H180.004C136 87.5834 75.8202 171.278 0 248.425Z" fill="#05213C" fill-opacity="0.25" style="mix-blend-mode:overlay"/>
+            <path d="M0 248.425V684H330.588C585.325 489.116 757.645 251.98 842.03 0H180.004C136 87.5834 75.8202 171.278 0 248.425Z" fill="#19199F" fill-opacity="0.25" style="mix-blend-mode:overlay"/>
             <defs>
                 <linearGradient id="pageHeroGrad" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#009CDE"/>
-                    <stop offset="1" stop-color="#84CC62"/>
+                    <stop stop-color="#5555B5"/>
+                    <stop offset="1" stop-color="#FF9E1B"/>
                 </linearGradient>
             </defs>
         </svg>

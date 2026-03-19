@@ -1,16 +1,16 @@
 @use "sass:map";
 
 $colors: (
-    primary: #05213c,
-    secondary: #009cde,
-    accent: #2e5c9e,
-    highlight: #84cc62,
+    primary: #19199F,
+    secondary: #5555B5,
+    accent: #5555B5,
+    highlight: #FF9E1B,
     white: #ffffff,
     lightest: #f5f7fa,
     lighter: #e2e8f0,
-    darker: #1a3a5c,
-    darkest: #05213c,
-    black: #1a1a2e,
+    darker: #19199F,
+    darkest: #19199F,
+    black: #19199F,
 ) !default;
 
 @function paint($key) {

@@ -2,18 +2,13 @@
 
 /* Default */
 
-$primary-font: "Quicksand", sans-serif;
-$secondary-font: "Quicksand", sans-serif;
+$primary-font: "ff-cocon-pro", sans-serif;
+$secondary-font: "Open Sans", sans-serif;
 
 body {
-  font-family: $primary-font;
-  font-size: var(--step-0);
-  font-optical-sizing: auto;
-  font-variation-settings:
-    "slnt" 0,
-    "CRSV" 0,
-    "SHRP" 0;
-  line-height: var(--space-l);
+  font-family: $secondary-font;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
 h1 {
@@ -40,7 +35,7 @@ h1 {
 
 h2, h3, h4, h5, h6 {
   color: paint(darkest);
-  font-family: $secondary-font;
+  font-family: $primary-font;
   text-shadow: 0 0 3px paint(lightest);
 }
 

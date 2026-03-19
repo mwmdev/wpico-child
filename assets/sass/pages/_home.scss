@@ -11,7 +11,7 @@
     position: relative;
 
     &__overlay {
-        background: url("../../img/civildefaultbg.png") center / cover no-repeat;
+        background: url("../../img/bandeau-home.png") center / cover no-repeat;
         filter: brightness(0.75);
         inset: 0;
         position: absolute;
@@ -26,10 +26,20 @@
         z-index: 1;
     }
 
+    &__halo {
+        left: 5%;
+        opacity: 0.15;
+        position: absolute;
+        top: 10%;
+        width: 40%;
+        z-index: 1;
+    }
+
     h1 {
         color: paint(white);
+        font-family: $primary-font;
         font-size: font-size(xxl);
-        font-weight: 200;
+        font-weight: 400;
         margin: 0 0 space(l) space(s);
         position: relative;
         width: 50%;
@@ -516,14 +526,17 @@
     }
 
     &__logo {
-        color: paint(white);
         display: block;
-        font-weight: 700;
         margin-bottom: space(xs);
         text-decoration: none;
 
+        img {
+            height: auto;
+            width: 10rem;
+        }
+
         &:hover {
-            color: paint(highlight);
+            opacity: 0.8;
         }
     }
 
