@@ -1,16 +1,15 @@
     <footer class="site-footer">
         <div class="site-footer__inner">
             <div class="site-footer__about">
-                <a class="site-footer__logo" href="https://cooperation.ca/" target="_blank" rel="noopener noreferrer">
-                    <?php bloginfo( 'name' ); ?>
+                <a class="site-footer__logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/img/C7-LOGO-BLANC.svg' ); ?>" alt="<?php bloginfo( 'name' ); ?>" />
                 </a>
-                <p><?php esc_html_e( "Cooperation Canada brings together Canada's international development and humanitarian organizations and advocates for them by convening sector leaders, influencing policy and building capacity. Together, we work with partners both inside and outside Canada to build a world that's fair, safe and sustainable for all.", 'c7' ); ?></p>
+                <p><?php esc_html_e( "Coordination SUD is the national coordination of French international solidarity organizations. It brings together more than 180 NGOs working in the fields of emergency, development, environmental protection, human rights, and advocacy.", 'c7' ); ?></p>
             </div>
             <nav class="site-footer__nav">
                 <ul>
-                    <li><a href="https://cooperation.ca/privacy-policy" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Privacy Policy', 'c7' ); ?></a></li>
-                    <?php $contact_prefix = c7_get_lang() === 'fr' ? 'fr/' : ''; ?>
-                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( $contact_prefix . 'contact' ) ) ); ?>"><?php esc_html_e( 'Contact', 'c7' ); ?></a></li>
+                    <li><a href="https://www.coordinationsud.org/" target="_blank" rel="noopener noreferrer"><?php esc_html_e( 'Coordination SUD', 'c7' ); ?></a></li>
+                    <li><a href="<?php echo esc_url( get_permalink( get_page_by_path( c7_page_path( 'contact' ) ) ) ); ?>"><?php esc_html_e( 'Contact', 'c7' ); ?></a></li>
                 </ul>
             </nav>
             <div class="site-footer__social">

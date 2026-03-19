@@ -45,11 +45,16 @@ function c7_preconnect_google_fonts() {
 add_action('wp_head', 'c7_preconnect_google_fonts', 7);
 
 /**
- * Enqueue Google Fonts
+ * Enqueue fonts: Adobe Typekit (CoconPro) + Google Fonts (Open Sans)
  */
 function c7_enqueue_fonts() {
+    wp_enqueue_style('c7-typekit',
+        'https://use.typekit.net/ptw5jvq.css',
+        array(),
+        null
+    );
     wp_enqueue_style('c7-fonts',
-        'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap',
         array(),
         null
     );
@@ -84,24 +89,48 @@ function c7_get_lang() {
     return $lang;
 }
 
+function c7_slug_map() {
+    return array(
+        'what-is-c7'          => 'quest-ce-que-le-c7',
+        'thematic-priorities'  => 'priorites-thematiques',
+        'steering-committee'   => 'comite-directeur',
+        'events-calendar'      => 'calendrier-des-evenements',
+        'news'                 => 'nouvelles',
+        'resources'            => 'ressources',
+        'contact'              => 'contact',
+    );
+}
+
+function c7_page_path( $en_slug ) {
+    if ( c7_get_lang() === 'fr' ) {
+        $map = c7_slug_map();
+        $fr_slug = isset( $map[ $en_slug ] ) ? $map[ $en_slug ] : $en_slug;
+        return 'fr/' . $fr_slug;
+    }
+    return $en_slug;
+}
+
 function c7_get_translation_url() {
     if ( ! is_page() ) return home_url( '/' );
 
     $current = get_queried_object();
     if ( ! $current ) return home_url( '/' );
 
+    $map = c7_slug_map();
+    $reverse = array_flip( $map );
+
     if ( c7_get_lang() === 'fr' ) {
-        // French → English: strip "fr/" prefix
-        $slug = $current->post_name;
         $fr_page = get_page_by_path( 'fr' );
         if ( $fr_page && $current->ID === $fr_page->ID ) return home_url( '/' );
-        $en_page = get_page_by_path( $slug );
+        $fr_slug = $current->post_name;
+        $en_slug = isset( $reverse[ $fr_slug ] ) ? $reverse[ $fr_slug ] : $fr_slug;
+        $en_page = get_page_by_path( $en_slug );
         return $en_page ? get_permalink( $en_page ) : home_url( '/' );
     }
 
-    // English → French: prepend "fr/" prefix
-    $slug = $current->post_name;
-    $fr_page = get_page_by_path( 'fr/' . $slug );
+    $en_slug = $current->post_name;
+    $fr_slug = isset( $map[ $en_slug ] ) ? $map[ $en_slug ] : $en_slug;
+    $fr_page = get_page_by_path( 'fr/' . $fr_slug );
     return $fr_page ? get_permalink( $fr_page ) : home_url( '/fr/' );
 }
 
@@ -111,6 +140,19 @@ function c7_switch_locale() {
     }
 }
 add_action( 'template_redirect', 'c7_switch_locale' );
+
+function c7_french_page_template( $template ) {
+    if ( ! is_page() || c7_get_lang() !== 'fr' ) return $template;
+
+    $slug = get_queried_object()->post_name;
+    $reverse = array_flip( c7_slug_map() );
+    if ( isset( $reverse[ $slug ] ) ) {
+        $en_template = get_stylesheet_directory() . '/page-' . $reverse[ $slug ] . '.php';
+        if ( file_exists( $en_template ) ) return $en_template;
+    }
+    return $template;
+}
+add_filter( 'template_include', 'c7_french_page_template' );
 
 function c7_body_class_lang( $classes ) {
     $classes[] = 'lang-' . c7_get_lang();
