@@ -54,7 +54,7 @@ function c7_enqueue_fonts() {
         null
     );
     wp_enqueue_style('c7-fonts',
-        'https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap',
         array(),
         null
     );

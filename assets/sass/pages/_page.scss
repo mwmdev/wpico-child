@@ -19,7 +19,7 @@
     position: relative;
 
     &__overlay {
-        background-image: url("../../img/bandeau-home.png");
+        background-image: url("../img/bandeau-home.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -43,7 +43,8 @@
         font-weight: 200;
         margin: 0 0 space(l) space(s);
         position: relative;
-        width: 75%;
+        white-space: nowrap;
+        width: auto;
         z-index: 20;
         text-shadow: none;
 
@@ -68,14 +69,12 @@
         h1 {
             font-size: font-size(xxl) * 1.6;
             margin-left: space(l);
-            width: 50%;
         }
     }
 
     @media (min-width: breakpoint(xl)) {
         h1 {
             font-size: font-size(xxl) * 2;
-            width: 40%;
         }
     }
 }

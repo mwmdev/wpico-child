@@ -10,7 +10,7 @@ const wpPot = require('gulp-wp-pot');
 
 // Configuration
 const config = {
-    proxyURL: 'localhost:8001',
+    proxyURL: 'localhost:8000',
     textDomain: 'c7',
     paths: {
         styles: {

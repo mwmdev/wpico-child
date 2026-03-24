@@ -89,17 +89,20 @@
             ul {
                 display: flex;
                 align-items: center;
-                gap: space(xs);
+                gap: space(s);
 
                 li {
                     display: inline-flex;
                     margin: 0;
+                    white-space: nowrap;
 
                     a {
-                        color: #707070;
-                        font-size: font-size(s);
-                        font-weight: 600;
-                        padding: space(2xs) space(3xs);
+                        color: paint(darkest);
+                        display: inline-block;
+                        font-family: $secondary-font;
+                        font-size: font-size(xs);
+                        font-weight: 500;
+                        padding: 0 space(3xs);
                         position: relative;
                         text-transform: none;
 
@@ -145,11 +148,11 @@
         border-top: 1px solid paint(lighter);
 
         a {
-            color: paint(darker);
+            color: paint(darkest);
             text-decoration: none;
             font-family: $secondary-font;
-            font-size: font-size(s);
-            font-weight: 600;
+            font-size: font-size(xs);
+            font-weight: 500;
 
             &:hover {
                 color: paint(secondary);

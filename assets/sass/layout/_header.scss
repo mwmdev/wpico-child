@@ -68,9 +68,9 @@
     > .container {
         display: flex;
         align-items: center;
-        gap: space(l);
-        padding-top: space(m);
-        padding-bottom: space(xs);
+        gap: space(m);
+        padding-top: space(s);
+        padding-bottom: space(s);
     }
 
     &__logo {
@@ -78,7 +78,7 @@
         flex-shrink: 0;
 
         img {
-            width: 10rem;
+            width: 8rem;
             height: auto;
             transition: opacity 0.2s ease;
         }

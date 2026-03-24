@@ -25,7 +25,7 @@
                 </linearGradient>
             </defs>
         </svg>
-        <img class="hero__halo" src="<?php echo esc_url( "$img/halo.svg" ); ?>" alt="" loading="eager"/>
+        <img class="hero__watermark" src="<?php echo esc_url( "$img/LOGO-COULEUR.svg" ); ?>" alt="" loading="eager"/>
         <h1><?php esc_html_e( 'Together for change', 'c7' ); ?></h1>
         <div class="hero__blur"></div>
         <img class="hero__cover" src="<?php echo esc_url( "$img/visuel-communique.png" ); ?>" alt="" width="1220" height="870" loading="eager"/>
@@ -34,10 +34,10 @@
     <!-- Communiqué CTA (white card overlapping hero) -->
     <section class="communique">
         <p class="communique__intro">
-            <?php esc_html_e( 'The Civil Society 7 (C7) is an official G7 engagement group representing civil society interests and developing recommendations to be escalated into G7 Summit decisions.', 'c7' ); ?>
+            <?php esc_html_e( 'Civil 7 (C7) is one of the official engagement groups of the Group of Seven (G7). It serves as a platform for civil society organizations to develop and present their joint recommendations, aiming to strengthen international cooperation on key issues.', 'c7' ); ?>
         </p>
         <a class="communique__link" href="<?php echo esc_url( $what_url ); ?>">
-            <?php esc_html_e( 'Defining tomorrow, today.', 'c7' ); ?>
+            <?php esc_html_e( 'Read more', 'c7' ); ?> <span><?php esc_html_e( 'about the C7', 'c7' ); ?></span>
         </a>
     </section>
 
@@ -70,7 +70,7 @@
         </svg>
         <div class="about__inner">
             <h2><?php esc_html_e( 'Defining tomorrow, today.', 'c7' ); ?></h2>
-            <p><?php esc_html_e( "Through a thoughtful balancing of the French G7 presidency objectives and international civil society concerns, we've curated a list of thematic priorities and established dedicated working groups to tackle them.", 'c7' ); ?></p>
+            <p><?php esc_html_e( 'C7 extends beyond the G7 by bringing together around a hundred civil society organizations from across the world. It thus highlights the importance of the active and open participation of civil society actors, and the need for constructive dialogue with the representatives of the G7 member states.', 'c7' ); ?></p>
             <a href="<?php echo esc_url( $priorities_url ); ?>">
                 <?php esc_html_e( 'Read more about our working groups', 'c7' ); ?>
             </a>
@@ -80,19 +80,35 @@
     <!-- Working Group Cards -->
     <section class="priorities">
         <div class="priorities__grid">
-            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#climat' ); ?>">
-                <img src="<?php echo esc_url( "$img/climat.svg" ); ?>" alt="" width="50" height="50"/>
-                <span><?php esc_html_e( 'Climate', 'c7' ); ?></span>
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#multilateralism' ); ?>">
+                <img src="<?php echo esc_url( "$img/peace.svg" ); ?>" alt="" width="50" height="50"/>
+                <span><?php esc_html_e( 'Multilateralism', 'c7' ); ?></span>
             </a>
-            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#financement' ); ?>">
-                <img src="<?php echo esc_url( "$img/financement.svg" ); ?>" alt="" width="50" height="50"/>
-                <span><?php esc_html_e( 'Financing', 'c7' ); ?></span>
-            </a>
-            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#espace-civique' ); ?>">
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#civic-space' ); ?>">
                 <img src="<?php echo esc_url( "$img/espace-civique.svg" ); ?>" alt="" width="50" height="50"/>
                 <span><?php esc_html_e( 'Civic Space', 'c7' ); ?></span>
             </a>
-            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#sante' ); ?>">
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#development-cooperation' ); ?>">
+                <img src="<?php echo esc_url( "$img/financement.svg" ); ?>" alt="" width="50" height="50"/>
+                <span><?php esc_html_e( 'Development Cooperation', 'c7' ); ?></span>
+            </a>
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#economic-justice' ); ?>">
+                <img src="<?php echo esc_url( "$img/justice-economique.svg" ); ?>" alt="" width="50" height="50"/>
+                <span><?php esc_html_e( 'Economic Justice', 'c7' ); ?></span>
+            </a>
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#gender-equality' ); ?>">
+                <img src="<?php echo esc_url( "$img/gender.svg" ); ?>" alt="" width="50" height="50"/>
+                <span><?php esc_html_e( 'Gender Equality', 'c7' ); ?></span>
+            </a>
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#humanitarian-aid' ); ?>">
+                <img src="<?php echo esc_url( "$img/enjeux-humanitaires.svg" ); ?>" alt="" width="50" height="50"/>
+                <span><?php esc_html_e( 'Humanitarian Aid', 'c7' ); ?></span>
+            </a>
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#climate-environment' ); ?>">
+                <img src="<?php echo esc_url( "$img/climat.svg" ); ?>" alt="" width="50" height="50"/>
+                <span><?php esc_html_e( 'Climate & Environment', 'c7' ); ?></span>
+            </a>
+            <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#health' ); ?>">
                 <img src="<?php echo esc_url( "$img/sante.svg" ); ?>" alt="" width="50" height="50"/>
                 <span><?php esc_html_e( 'Health', 'c7' ); ?></span>
             </a>

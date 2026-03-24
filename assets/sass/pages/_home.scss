@@ -9,109 +9,77 @@
 // Hero
 // ---------------------------------------------------------------------------
 .hero {
-    background: linear-gradient(135deg, paint(primary), paint(accent));
-    min-height: 80vh;
+    display: flex;
+    align-items: flex-end;
+    min-height: 50vh;
     overflow: hidden;
-    padding: space(xxl) space(m) space(xxl);
     position: relative;
 
     &__overlay {
-        background: url("../../img/bandeau-home.png") center / cover no-repeat;
-        filter: brightness(0.75);
+        background: url("../img/bandeau-home.png") center / cover no-repeat;
+        filter: brightness(0.8);
         inset: 0;
         position: absolute;
         z-index: 0;
     }
 
-    &__shape {
-        height: 100%;
-        left: 0;
-        bottom: 0;
-        position: absolute;
-        z-index: 1;
+    // White diagonal overlay on right — disabled
+    &::after {
+        display: none;
     }
 
+    // Hide unused elements
+    &__shape,
+    &__blur,
+    &__cover,
     &__halo {
-        left: 5%;
-        opacity: 0.15;
+        display: none !important;
+    }
+
+    // C7 logo watermark on right
+    &__watermark {
+        filter: grayscale(1) brightness(1.5);
+        left: auto;
+        opacity: 0.07;
         position: absolute;
+        right: 5%;
         top: 10%;
-        width: 40%;
-        z-index: 1;
+        width: 55%;
+        z-index: 2;
     }
 
     h1 {
         color: paint(white);
         font-family: $primary-font;
-        font-size: font-size(xxl);
+        font-size: font-size(xl);
         font-weight: 400;
-        margin: 0 0 space(l) space(s);
+        line-height: 1.2;
+        margin: 0;
+        padding: 0 space(m) space(xxl);
         position: relative;
-        width: 50%;
-        z-index: 20;
-        text-shadow: none;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        width: 55%;
+        z-index: 3;
 
         &::before {
             display: none;
         }
     }
 
-    &__blur {
-        background: rgba(15, 23, 42, 0.5);
-        filter: blur(40px);
-        height: 8rem;
-        margin-top: -6rem;
-        position: relative;
-        width: 60%;
-        z-index: 10;
-    }
-
-    &__cover {
-        bottom: auto;
-        position: absolute;
-        right: -3rem;
-        top: 5rem;
-        transform: none;
-        width: 60%;
-        z-index: 20;
-    }
-
     @media (min-width: breakpoint(l)) {
-        padding: space(xxl) * 3 space(l) space(xxl) * 2;
+        min-height: 55vh;
 
         h1 {
-            font-size: font-size(xl) * 1.5;
-            margin-left: space(l);
-            margin-bottom: space(xxl);
-            width: 35%;
-        }
-
-        &__cover {
-            right: -5rem;
-            top: 5rem;
-            transform: none;
-            width: 70%;
+            font-size: font-size(xxl);
+            padding: 0 space(l) space(xxl) * 1.5;
+            width: 40%;
         }
     }
 
     @media (min-width: breakpoint(xl)) {
         h1 {
-            font-size: font-size(xl) * 1.75;
+            font-size: font-size(xxl) * 1.2;
             width: 35%;
-        }
-
-        &__cover {
-            right: -3rem;
-            top: 2rem;
-            width: 60%;
-        }
-    }
-
-    @media (min-width: breakpoint(xxl)) {
-        &__cover {
-            right: 0;
-            top: 0;
-            width: 55%;
         }
     }
 }
@@ -121,92 +89,109 @@
 // ---------------------------------------------------------------------------
 .communique {
     background: paint(white);
+    border-bottom: 1px solid paint(lighter);
     font-size: font-size(m);
-    font-weight: 500;
-    line-height: 1.5;
-    margin-top: -2.5rem;
-    padding: space(l) space(l) space(l) space(l);
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: -2rem;
+    padding: space(l);
     position: relative;
-    width: 83%;
+    width: 85%;
     z-index: 10;
 
-    border-top-right-radius: 2px;
-
     &__intro {
+        color: #1a1a1a;
         margin-bottom: space(m);
     }
 
     &__link {
-        color: paint(secondary);
+        color: paint(darkest);
         display: inline-block;
         font-size: font-size(s);
         font-weight: 700;
+        text-decoration: none;
         text-transform: uppercase;
 
+        span {
+            color: paint(highlight);
+        }
+
         &:hover {
-            color: paint(accent);
+            color: paint(secondary);
+
+            span {
+                color: paint(secondary);
+            }
         }
     }
 
     @media (min-width: breakpoint(l)) {
-        margin-top: -6rem;
+        margin-top: -4rem;
         padding: space(xl);
-        width: 60%;
+        width: 55%;
     }
 }
 
 // ---------------------------------------------------------------------------
-// Communiqué Banner (blue gradient + cover image)
+// Communiqué Banner (purple/indigo + cover image)
 // ---------------------------------------------------------------------------
 .communique-banner {
-    background: linear-gradient(to bottom left, paint(primary), paint(accent));
+    background: paint(secondary);
     margin: space(m) auto space(xxl);
     max-width: 1450px;
-    overflow: hidden;
     padding: space(l);
     position: relative;
 
+    // Diagonal triangle decoration on bottom-left
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 12%;
+        height: 100%;
+        background: paint(primary);
+        clip-path: polygon(0 35%, 100% 100%, 0 100%);
+        z-index: 1;
+    }
+
     &__content {
         position: relative;
-        z-index: 30;
+        z-index: 10;
     }
 
     h2 {
         color: paint(white);
         font-size: font-size(xl);
-        font-weight: 300;
+        font-weight: 700;
+        line-height: 1.2;
         margin-bottom: space(s);
         text-shadow: none;
-        width: 75%;
+        width: 80%;
     }
 
     p {
-        color: paint(white);
+        color: rgba(paint(white), 0.85);
         margin-bottom: space(m);
-        width: 50%;
     }
 
     &__btn {
-        background: rgba(paint(primary), 0.75);
+        background: transparent;
+        border: 1px solid paint(highlight);
         color: paint(white);
         display: inline-flex;
         align-items: center;
         gap: space(2xs);
-        padding: space(xs) space(2xs) space(xs) space(s);
+        font-weight: 600;
+        padding: space(xs) space(m);
         text-decoration: none;
-        text-transform: uppercase;
-        font-weight: 700;
 
         svg {
-            color: paint(highlight);
+            display: none;
         }
 
-        span,
-        &:not(svg) {
-            background: linear-gradient(to top left, paint(highlight), paint(secondary));
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        &:hover {
+            background: rgba(paint(highlight), 0.15);
         }
     }
 
@@ -218,23 +203,34 @@
         padding: space(xl);
 
         h2 {
-            font-size: font-size(xl) * 1.25;
-            width: 50%;
+            font-size: font-size(xl) * 1.5;
+            width: 45%;
+        }
+
+        p {
+            width: 40%;
         }
 
         &__cover {
             display: block;
             position: absolute;
-            right: -16rem;
-            bottom: -50%;
-            width: 80%;
-            z-index: 20;
+            right: -5rem;
+            top: -20%;
+            transform: rotate(-8deg);
+            width: 60%;
+            z-index: 5;
         }
     }
 
     @media (min-width: breakpoint(xl)) {
         h2 {
-            font-size: font-size(xl) * 1.5;
+            font-size: font-size(xl) * 1.75;
+        }
+
+        &__cover {
+            right: -3rem;
+            top: -25%;
+            width: 55%;
         }
     }
 }
@@ -370,19 +366,23 @@
         }
 
         &__card {
-            aspect-ratio: 1;
+            align-items: center;
             flex-direction: column;
-            justify-content: space-between;
-            padding: space(l);
+            justify-content: center;
+            padding: space(m) space(s);
+            text-align: center;
 
             img {
                 height: 3rem;
-                margin-top: auto;
+                margin-bottom: space(s);
                 width: 3rem;
             }
 
             span {
                 font-size: font-size(m);
+                word-break: keep-all;
+                overflow-wrap: normal;
+                hyphens: none;
             }
 
             &:hover {
@@ -401,7 +401,6 @@
 
             span {
                 font-size: font-size(l);
-                width: 75%;
             }
         }
     }
@@ -422,7 +421,7 @@
         display: grid;
         gap: space(m);
         grid-template-columns: 1fr;
-        padding: 0 space(m) space(s);
+        padding: space(l) space(m) space(s);
         position: relative;
         z-index: 10;
     }
@@ -470,7 +469,7 @@
         &__cards {
             gap: space(m);
             grid-template-columns: repeat(3, 1fr);
-            padding: 0 space(m) space(xxl);
+            padding: space(l) space(m) space(xxl);
             width: 80%;
         }
 
