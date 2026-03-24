@@ -47,11 +47,19 @@ msgstr "Visiter le profil LinkedIn"
 msgid "Together for change"
 msgstr "Ensemble pour le changement"
 
-#: front-page.php:38
-msgid "The Civil Society 7 (C7) is an official G7 engagement group representing civil society interests and developing recommendations to be escalated into G7 Summit decisions."
-msgstr "Le Civil Society 7 (C7) est un groupe d'engagement officiel du G7 qui représente les intérêts de la société civile et élabore des recommandations destinées à être intégrées aux décisions du Sommet du G7."
+#: front-page.php:37
+msgid "Civil 7 (C7) is one of the official engagement groups of the Group of Seven (G7). It serves as a platform for civil society organizations to develop and present their joint recommendations, aiming to strengthen international cooperation on key issues."
+msgstr "Le Civil 7 (C7) est l'un des groupes d'engagement officiels du Groupe des Sept (G7). Il sert de plateforme aux organisations de la société civile pour élaborer et présenter leurs recommandations communes, visant à renforcer la coopération internationale sur les enjeux clés."
 
-#: front-page.php:41, front-page.php:73
+#: front-page.php:40
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: front-page.php:40
+msgid "about the C7"
+msgstr "sur le C7"
+
+#: front-page.php:72
 msgid "Defining tomorrow, today."
 msgstr "Définir demain, aujourd'hui."
 
@@ -63,27 +71,43 @@ msgstr "Le communiqué C7 2026 est maintenant disponible"
 msgid "Read the Communique"
 msgstr "Lire le communiqué"
 
-#: front-page.php:74
-msgid "Through a thoughtful balancing of the French G7 presidency objectives and international civil society concerns, we've curated a list of thematic priorities and established dedicated working groups to tackle them."
-msgstr "Grâce à un équilibre réfléchi entre les objectifs de la présidence française du G7 et les préoccupations de la société civile internationale, nous avons établi une liste de priorités thématiques et mis en place des groupes de travail dédiés pour les aborder."
+#: front-page.php:73
+msgid "C7 extends beyond the G7 by bringing together around a hundred civil society organizations from across the world. It thus highlights the importance of the active and open participation of civil society actors, and the need for constructive dialogue with the representatives of the G7 member states."
+msgstr "Le C7 va au-delà du G7 en rassemblant une centaine d'organisations de la société civile du monde entier. Il souligne ainsi l'importance de la participation active et ouverte des acteurs de la société civile, et la nécessité d'un dialogue constructif avec les représentants des États membres du G7."
 
 #: front-page.php:76
 msgid "Read more about our working groups"
 msgstr "En savoir plus sur nos groupes de travail"
 
-#: front-page.php:86
-msgid "Climate"
-msgstr "Climat"
+#: front-page.php:85
+msgid "Multilateralism"
+msgstr "Multilatéralisme"
 
-#: front-page.php:90
-msgid "Financing"
-msgstr "Financement"
-
-#: front-page.php:94
+#: front-page.php:89
 msgid "Civic Space"
 msgstr "Espace civique"
 
-#: front-page.php:98
+#: front-page.php:93
+msgid "Development Cooperation"
+msgstr "Coopération au développement"
+
+#: front-page.php:97
+msgid "Economic Justice"
+msgstr "Justice économique"
+
+#: front-page.php:101
+msgid "Gender Equality"
+msgstr "Égalité des genres"
+
+#: front-page.php:105
+msgid "Humanitarian Aid"
+msgstr "Aide humanitaire"
+
+#: front-page.php:109
+msgid "Climate & Environment"
+msgstr "Climat et environnement"
+
+#: front-page.php:113
 msgid "Health"
 msgstr "Santé"
 
