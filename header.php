@@ -11,7 +11,7 @@
     <div class="top-banner">
         <div class="container">
             <span><?php esc_html_e( 'Together for global justice', 'c7' ); ?></span>
-            <a href="https://pub-6aff04384c4245dbace9b1db0d5e61fb.r2.dev/c7-2025-communique-global-justice-together-web.pdf" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Download the Communique - Opens in a new tab', 'c7' ); ?>">
+            <a href="<?php echo esc_url( get_stylesheet_directory_uri() . '/assets/pdf/c7-2025-communique-global-justice-together-web.pdf' ); ?>" target="_blank" rel="noopener" aria-label="<?php esc_attr_e( 'Download the Communique - Opens in a new tab', 'c7' ); ?>">
                 <span><?php esc_html_e( 'Read the communique', 'c7' ); ?></span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z"/><path d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z"/></svg>
             </a>
