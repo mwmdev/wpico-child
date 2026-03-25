@@ -14,50 +14,47 @@
         margin-left: 20%;
         padding: 0 0 space(xxl);
     }
-}
 
-// ---------------------------------------------------------------------------
-// Event List (Events Calendar page)
-// Used in WP editor as: <div class="event-list">...</div>
-// ---------------------------------------------------------------------------
-.event-list {
+    h2 {
+        color: paint(primary);
+        font-size: font-size(xl);
+        margin: space(l) 0 space(s);
+    }
 
-    .event {
-        border-bottom: 2px solid paint(lightest);
-        padding: space(m) 0;
+    h3 {
+        border-top: 2px solid paint(lightest);
+        color: paint(primary);
+        font-size: font-size(l);
+        font-weight: 700;
+        margin: 0;
+        padding-top: space(m);
+    }
 
-        &__date {
+    h2 + h3 {
+        border-top: none;
+        padding-top: 0;
+    }
+
+    p {
+        color: paint(darker);
+        font-size: font-size(m);
+        line-height: 1.7;
+        margin: space(3xs) 0;
+
+        strong {
             color: paint(secondary);
-            display: block;
             font-size: font-size(s);
-            font-weight: 700;
-            margin-bottom: space(3xs);
         }
 
-        &__type {
+        em {
             background: paint(lightest);
             border-radius: 2px;
             color: paint(accent);
-            display: inline-block;
             font-size: font-size(xs);
+            font-style: normal;
             font-weight: 700;
-            margin-bottom: space(3xs);
             padding: space(3xs) space(2xs);
             text-transform: uppercase;
-        }
-
-        &__title {
-            color: paint(primary);
-            display: block;
-            font-size: font-size(l);
-            font-weight: 700;
-            margin-bottom: space(3xs);
-        }
-
-        &__desc {
-            color: paint(darker);
-            font-size: font-size(m);
-            line-height: 1.7;
         }
     }
 }

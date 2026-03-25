@@ -23,10 +23,10 @@
     <?php
     $content = apply_filters( 'the_content', get_the_content() );
 
-    // Split at the event-list div to separate intro from events
-    $parts = preg_split( '/(<div class="event-list">)/i', $content, 2, PREG_SPLIT_DELIM_CAPTURE );
+    // Split at the first <h2> to separate intro from events
+    $parts  = preg_split( '/(?=<h2[\s>])/i', $content, 2 );
     $intro  = isset( $parts[0] ) ? trim( $parts[0] ) : '';
-    $events = ( isset( $parts[1] ) && isset( $parts[2] ) ) ? $parts[1] . $parts[2] : '';
+    $events = isset( $parts[1] ) ? trim( $parts[1] ) : '';
     ?>
 
     <?php if ( $intro ) : ?>
