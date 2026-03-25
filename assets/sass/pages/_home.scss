@@ -126,9 +126,9 @@
     }
 
     @media (min-width: breakpoint(l)) {
-        margin-top: -4rem;
+        margin-top: -6rem;
         padding: space(xl);
-        width: 55%;
+        width: 65%;
     }
 }
 
@@ -204,7 +204,7 @@
 
         h2 {
             font-size: font-size(xl) * 1.5;
-            width: 45%;
+            width: 60%;
         }
 
         p {
@@ -239,7 +239,7 @@
 // About / Defining tomorrow
 // ---------------------------------------------------------------------------
 .about {
-    padding: space(xl) 0 space(l);
+    padding: 0 0 20rem 0;
     position: relative;
     text-align: right;
 
@@ -275,7 +275,7 @@
         margin-bottom: space(s);
         margin-left: auto;
         position: relative;
-        width: 83%;
+        width: 70%;
         z-index: 10;
     }
 
@@ -292,7 +292,7 @@
     }
 
     @media (min-width: breakpoint(l)) {
-        padding-bottom: space(xxl) * 2;
+        padding-bottom: 20rem;
 
         h2 {
             font-size: font-size(xl) * 1.25;
@@ -317,6 +317,7 @@
 .priorities {
     max-width: 1450px;
     margin: 0 auto;
+    margin-top: -17rem;
     padding: space(xl) space(m) 0;
 
     &__grid {

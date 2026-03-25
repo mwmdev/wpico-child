@@ -82,7 +82,7 @@
     <section class="priorities">
         <div class="priorities__grid">
             <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#multilateralism' ); ?>">
-                <img src="<?php echo esc_url( "$img/peace.svg" ); ?>" alt="" width="50" height="50"/>
+                <img src="<?php echo esc_url( "$img/multilateralism.svg" ); ?>" alt="" width="50" height="50"/>
                 <span><?php esc_html_e( 'Multilateralism', 'c7' ); ?></span>
             </a>
             <a class="priorities__card" href="<?php echo esc_url( $priorities_url . '#civic-space' ); ?>">
