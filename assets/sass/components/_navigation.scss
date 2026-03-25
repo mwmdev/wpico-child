@@ -89,7 +89,7 @@
             ul {
                 display: flex;
                 align-items: center;
-                gap: space(s);
+                gap: space(l);
 
                 li {
                     display: inline-flex;
@@ -159,7 +159,7 @@
             }
 
             svg {
-                display: block;
+                vertical-align: middle;
             }
         }
 
@@ -168,6 +168,7 @@
             margin-left: auto;
             padding-top: 0;
             border-top: 0;
+            transform: translateY(-14px);
         }
     }
 }
