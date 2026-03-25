@@ -5,6 +5,7 @@
     <?php
     $img = get_stylesheet_directory_uri() . '/assets/img';
     $pdf = get_stylesheet_directory_uri() . '/assets/pdf';
+    $communique_img = c7_get_lang() === 'fr' ? 'visuel-communique-fr.png' : 'visuel-communique.png';
     $priorities_url = get_permalink( get_page_by_path( c7_page_path( 'thematic-priorities' ) ) );
     $what_url       = get_permalink( get_page_by_path( c7_page_path( 'what-is-c7' ) ) );
     $news_url       = get_permalink( get_page_by_path( c7_page_path( 'news' ) ) );
@@ -28,7 +29,7 @@
         <img class="hero__watermark" src="<?php echo esc_url( "$img/LOGO-COULEUR.svg" ); ?>" alt="" loading="eager"/>
         <h1><?php esc_html_e( 'Together for change', 'c7' ); ?></h1>
         <div class="hero__blur"></div>
-        <img class="hero__cover" src="<?php echo esc_url( "$img/visuel-communique.png" ); ?>" alt="" width="1220" height="870" loading="eager"/>
+        <img class="hero__cover" src="<?php echo esc_url( "$img/$communique_img" ); ?>" alt="" width="1220" height="870" loading="eager"/>
     </section>
 
     <!-- Communiqué CTA (white card overlapping hero) -->
@@ -54,7 +55,7 @@
                 </svg>
             </a>
         </div>
-        <img class="communique-banner__cover" src="<?php echo esc_url( "$img/visuel-communique.png" ); ?>" alt="" width="1220" height="870" loading="lazy"/>
+        <img class="communique-banner__cover" src="<?php echo esc_url( "$img/$communique_img" ); ?>" alt="" width="1220" height="870" loading="lazy"/>
     </section>
 
     <!-- About / Defining tomorrow -->
