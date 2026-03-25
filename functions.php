@@ -159,3 +159,5 @@ function c7_body_class_lang( $classes ) {
     return $classes;
 }
 add_filter( 'body_class', 'c7_body_class_lang' );
+
+add_filter( 'use_default_gallery_style', '__return_false' );
